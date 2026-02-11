@@ -35,9 +35,31 @@
           
           // Update WhatsApp links
           const phoneClean = phone.replace(/\D/g, '');
+          const phoneHref = `tel:+55${phoneClean}`;
+          const emailHref = `mailto:${email}`;
           const whatsappUrl = `https://wa.me/55${phoneClean}?text=Olá! Gostaria de solicitar um orçamento.`;
           document.getElementById('whatsapp-link').href = whatsappUrl;
           document.getElementById('floating-whatsapp').href = whatsappUrl;
+
+          const whatsappSecondaryLink = document.getElementById('whatsapp-secondary-link');
+          if (whatsappSecondaryLink) {
+            whatsappSecondaryLink.href = whatsappUrl;
+          }
+
+          const phoneLink = document.getElementById('contact-phone-link');
+          if (phoneLink) {
+            phoneLink.href = phoneHref;
+          }
+
+          const emailLink = document.getElementById('contact-email-link');
+          if (emailLink) {
+            emailLink.href = emailHref;
+          }
+
+          const inlineEmailLink = document.getElementById('contact-email-link-inline');
+          if (inlineEmailLink) {
+            inlineEmailLink.href = emailHref;
+          }
         },
         mapToCapabilities: (config) => ({
           recolorables: [],

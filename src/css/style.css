@@ -1,5 +1,6 @@
 html,
 body {
+      margin: 0;
       max-width: 100%;
       overflow-x: hidden;
     }
@@ -44,7 +45,7 @@ body {
 }
 
 .brand-logo-footer {
-  height: 44px;
+  height: 120px;
   max-width: 240px;
   filter: brightness(0) invert(1);
 }
@@ -155,6 +156,83 @@ body {
       scroll-margin-top: 6rem;
     }
 
+    .contact-shell {
+      background:
+        radial-gradient(circle at 100% 0%, rgba(13, 138, 95, 0.16), transparent 44%),
+        linear-gradient(140deg, rgba(255, 255, 255, 0.86), rgba(255, 255, 255, 0.68));
+      border: 1px solid rgba(148, 163, 184, 0.28);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+    }
+
+    .contact-form-card {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .contact-form-card::after {
+      content: '';
+      position: absolute;
+      inset: auto -140px -160px auto;
+      width: 280px;
+      height: 280px;
+      background: radial-gradient(circle, rgba(52, 190, 107, 0.16), transparent 72%);
+      pointer-events: none;
+    }
+
+    .contact-info-card {
+      background:
+        linear-gradient(155deg, #0f3f33 0%, #13674f 52%, #0d8a5f 100%);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+    }
+
+    .contact-detail-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.95rem;
+      padding: 0.9rem;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      background: rgba(255, 255, 255, 0.06);
+      border-radius: 0.9rem;
+      transition: transform 0.25s ease, background-color 0.25s ease, border-color 0.25s ease;
+    }
+
+    a.contact-detail-item:hover {
+      transform: translateY(-2px);
+      background: rgba(255, 255, 255, 0.12);
+      border-color: rgba(255, 255, 255, 0.3);
+    }
+
+    .contact-channel-btn {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 0.9rem;
+      padding: 0.9rem 1rem;
+      font-weight: 600;
+      color: #ffffff;
+      background: linear-gradient(135deg, #0d8a5f, #10b981);
+      transition: transform 0.25s ease, filter 0.25s ease;
+    }
+
+    .contact-channel-btn:hover {
+      transform: translateY(-2px);
+      filter: brightness(1.05);
+    }
+
+    .contact-channel-btn-muted {
+      color: #0f1720;
+      background: #e5e7eb;
+    }
+
+    .contact-channel-btn-muted:hover {
+      filter: brightness(0.97);
+    }
+
+    .contact-whatsapp-cta {
+      border: 1px solid rgba(255, 255, 255, 0.24);
+    }
+
     @media (max-width: 1023px) {
       .card-hover:hover {
         transform: none;
@@ -178,5 +256,13 @@ body {
 
       .hero-blueprint {
         opacity: 0.5;
+      }
+
+      .contact-shell {
+        border-radius: 1.25rem;
+      }
+
+      .contact-detail-item {
+        padding: 0.8rem;
       }
     }
