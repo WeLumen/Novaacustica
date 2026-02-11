@@ -1,931 +1,2120 @@
-﻿<!DOCTYPE html>
+﻿<!doctype html>
 <html lang="pt-BR" class="h-full">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Especialistas em esquadrias de alumÃ­nio sob medida e soluÃ§Ãµes acÃºsticas. Janelas e portas com qualidade premium para seu conforto.">
-  <title>Nova AcÃºstica - Esquadrias de AlumÃ­nio</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <script src="/_sdk/element_sdk.js"></script>
-  <style>
-    body {
-      box-sizing: border-box;
-      color: var(--text);
-      background-color: #e9edf1;
-    }
-    :root {
-      --primary: #12a874;
-      --primary-dark: #0d8a5f;
-      --black: #0f1720;
-      --light-gray: #e5e7eb;
-      --text: #111827;
-      --muted-text: #4b5563;
-      --surface: #f8fafc;
-      --line: #d6dce3;
-    }
-    
-    * {
-      scroll-behavior: smooth;
-    }
-    
-    .font-heading {
-      font-family: 'Playfair Display', serif;
-    }
-    
-    .font-body {
-      font-family: 'Montserrat', sans-serif;
-    }
-    
-    .gradient-hero {
-      background:
-        radial-gradient(circle at 80% 18%, rgba(16, 185, 129, 0.14), transparent 38%),
-        linear-gradient(120deg, #f8fafc 0%, var(--light-gray) 58%, #cfd6de 100%);
-    }
-
-    .hero-photo {
-      background-image:
-        linear-gradient(115deg, rgba(15, 23, 32, 0.82) 0%, rgba(15, 23, 32, 0.62) 42%, rgba(229, 231, 235, 0.62) 100%),
-        url('https://images.unsplash.com/photo-1767242124591-e8b1d2df4109?auto=format&fit=crop&w=2200&q=80');
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-    }
-
-    .hero-blueprint {
-      background-image:
-        repeating-linear-gradient(0deg, rgba(15, 23, 32, 0.08) 0, rgba(15, 23, 32, 0.08) 1px, transparent 1px, transparent 42px),
-        repeating-linear-gradient(90deg, rgba(15, 23, 32, 0.08) 0, rgba(15, 23, 32, 0.08) 1px, transparent 1px, transparent 42px),
-        linear-gradient(135deg, rgba(15, 23, 32, 0.15) 0%, transparent 55%);
-      mask-image: linear-gradient(to right, rgba(0, 0, 0, 0.06), rgba(0, 0, 0, 0.78), rgba(0, 0, 0, 0.2));
-      -webkit-mask-image: linear-gradient(to right, rgba(0, 0, 0, 0.06), rgba(0, 0, 0, 0.78), rgba(0, 0, 0, 0.2));
-    }
-    
-    .accent-green {
-      color: var(--primary);
-    }
-    
-    .bg-accent-green {
-      background-color: var(--primary);
-    }
-
-    .bg-accent-green:hover {
-      background-color: var(--primary-dark);
-    }
-
-    .glass-nav {
-      background: rgba(248, 250, 252, 0.9);
-      border-bottom: 1px solid var(--line);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-    }
-    
-    .card-hover {
-      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-    
-    .card-hover:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 25px 50px -12px rgba(16, 185, 129, 0.1);
-    }
-    
-    .nav-link {
-      position: relative;
-      transition: color 0.3s ease;
-    }
-    
-    .nav-link::after {
-      content: '';
-      position: absolute;
-      bottom: -4px;
-      left: 0;
-      width: 0;
-      height: 2px;
-      background: #10b981;
-      transition: width 0.3s ease;
-    }
-    
-    .nav-link:hover::after {
-      width: 100%;
-    }
-    
-    .animate-float {
-      animation: float 6s ease-in-out infinite;
-    }
-    
-    @keyframes float {
-      0%, 100% { transform: translateY(0px); }
-      50% { transform: translateY(-20px); }
-    }
-    
-    .whatsapp-btn {
-      animation: bounce-gentle 2s ease-in-out infinite;
-    }
-    
-    @keyframes bounce-gentle {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-5px); }
-    }
-    
-    .gallery-item {
-      overflow: hidden;
-    }
-    
-    .gallery-item img {
-      transition: transform 0.5s ease;
-    }
-    
-    .gallery-item:hover img {
-      transform: scale(1.1);
-    }
-  </style>
-</head>
-<body class="h-full font-body text-gray-800 bg-slate-100 overflow-auto">
-  
-  <!-- Navigation -->
-  <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 glass-nav">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex justify-between items-center h-20">
-        <div class="flex items-center gap-3">
-          <div class="w-12 h-12 bg-accent-green rounded-lg flex items-center justify-center">
-            <svg class="w-8 h-8 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <rect x="3" y="3" width="18" height="18" rx="2"/>
-              <line x1="3" y1="9" x2="21" y2="9"/>
-              <line x1="9" y1="9" x2="9" y2="21"/>
-              <line x1="15" y1="9" x2="15" y2="21"/>
-            </svg>
-          </div>
-          <span id="nav-company-name" class="font-heading text-xl font-bold text-gray-900">Nova AcÃºstica</span>
-        </div>
-        
-        <!-- Desktop Menu -->
-        <div class="hidden lg:flex items-center gap-8">
-          <a href="#home" class="nav-link text-gray-700 hover:accent-green font-medium">Iní­cio</a>
-          <a href="#sobre" class="nav-link text-gray-700 hover:accent-green font-medium">Quem Somos</a>
-          <a href="#produtos" class="nav-link text-gray-700 hover:accent-green font-medium">Produtos</a>
-          <a href="#vidros" class="nav-link text-gray-700 hover:accent-green font-medium">Vidros</a>
-          <a href="#diferenciais" class="nav-link text-gray-700 hover:accent-green font-medium">Diferenciais</a>
-          <a href="#galeria" class="nav-link text-gray-700 hover:accent-green font-medium">Galeria</a>
-          <a href="#contato" class="bg-accent-green text-white px-6 py-2.5 rounded-full font-semibold hover:shadow-lg hover:shadow-green-500/30 transition-all">Contato</a>
-        </div>
-        
-        <!-- Mobile Menu Button -->
-        <button id="mobile-menu-btn" class="lg:hidden text-gray-800 p-2">
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
-          </svg>
-        </button>
-      </div>
-    </div>
-    
-    <!-- Mobile Menu -->
-    <div id="mobile-menu" class="lg:hidden hidden glass-nav">
-      <div class="px-4 py-6 space-y-4">
-        <a href="#home" class="block text-gray-700 hover:accent-green font-medium py-2">Iní­cio</a>
-        <a href="#sobre" class="block text-gray-700 hover:accent-green font-medium py-2">Quem Somos</a>
-        <a href="#produtos" class="block text-gray-700 hover:accent-green font-medium py-2">Produtos</a>
-        <a href="#vidros" class="block text-gray-700 hover:accent-green font-medium py-2">Vidros</a>
-        <a href="#diferenciais" class="block text-gray-700 hover:accent-green font-medium py-2">Diferenciais</a>
-        <a href="#galeria" class="block text-gray-700 hover:accent-green font-medium py-2">Galeria</a>
-        <a href="#contato" class="block bg-accent-green text-white px-6 py-3 rounded-full font-semibold text-center mt-4">Contato</a>
-      </div>
-    </div>
-  </nav>
-
-  <!-- Hero Section -->
-  <section id="home" class="relative min-h-screen gradient-hero flex items-center overflow-hidden pt-20">
-    <div class="absolute inset-0 overflow-hidden">
-      <div class="hero-photo absolute inset-0"></div>
-      <div class="hero-blueprint absolute inset-0"></div>
-      <div class="absolute top-20 right-10 w-72 h-72 bg-green-400/20 rounded-full blur-3xl animate-float"></div>
-      <div class="absolute bottom-20 left-10 w-96 h-96 bg-slate-900/10 rounded-full blur-3xl animate-float" style="animation-delay: -3s;"></div>
-      
-      <!-- Window Pattern SVG -->
-      <svg class="absolute right-0 top-1/2 -translate-y-1/2 w-1/2 h-auto opacity-10" viewBox="0 0 400 400">
-        <defs>
-          <linearGradient id="windowGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" style="stop-color:#10b981"/>
-            <stop offset="100%" style="stop-color:#059669"/>
-          </linearGradient>
-        </defs>
-        <rect x="50" y="50" width="300" height="300" fill="none" stroke="url(#windowGrad)" stroke-width="4" rx="10"/>
-        <line x1="50" y1="150" x2="350" y2="150" stroke="url(#windowGrad)" stroke-width="2"/>
-        <line x1="200" y1="50" x2="200" y2="350" stroke="url(#windowGrad)" stroke-width="2"/>
-        <rect x="70" y="70" width="110" height="60" fill="url(#windowGrad)" opacity="0.3" rx="4"/>
-        <rect x="220" y="70" width="110" height="60" fill="url(#windowGrad)" opacity="0.2" rx="4"/>
-        <rect x="70" y="170" width="110" height="160" fill="url(#windowGrad)" opacity="0.2" rx="4"/>
-        <rect x="220" y="170" width="110" height="160" fill="url(#windowGrad)" opacity="0.3" rx="4"/>
-      </svg>
-    </div>
-    
-    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
-      <div class="max-w-3xl">
-        <h1 id="hero-title" class="font-heading text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-100 leading-tight mb-6">
-          Esquadrias de Alumí­nio<br/>
-          <span class="accent-green">Sob Medida</span>
-        </h1>
-        
-        <p id="hero-subtitle" class="text-xl text-gray-200 mb-10 max-w-2xl leading-relaxed">
-          Transformamos ambientes com janelas e portas de alta performance. 
-          Conforto tÃ©rmico, isolamento acÃºstico e design sofisticado para sua casa ou empresa.
-        </p>
-        
-        <div class="flex flex-col sm:flex-row gap-4">
-          <a href="#contato" class="bg-accent-green text-white px-8 py-4 rounded-full font-semibold text-center hover:shadow-lg hover:shadow-green-500/30 transition-all inline-flex items-center justify-center gap-2">
-            <span>Solicitar Orçamento</span>
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-            </svg>
-          </a>
-          <a href="#produtos" class="bg-slate-900 text-gray-100 px-8 py-4 rounded-full font-semibold text-center hover:bg-black transition-all border border-slate-800">
-            Conheça Nossos Produtos
-          </a>
-        </div>
-        
-        <!-- Stats -->
-        <div class="grid grid-cols-3 gap-8 mt-16 pt-8 border-t border-slate-400/60">
-          <div>
-            <div class="text-3xl sm:text-4xl font-bold text-white">15+</div>
-            <div class="text-gray-200 text-sm mt-1">Anos de Experiência</div>
-          </div>
-          <div>
-            <div class="text-3xl sm:text-4xl font-bold text-white">500+</div>
-            <div class="text-gray-200 text-sm mt-1">Projetos Realizados</div>
-          </div>
-          <div>
-            <div class="text-3xl sm:text-4xl font-bold text-white">98%</div>
-            <div class="text-gray-200 text-sm mt-1">Clientes Satisfeitos</div>
-          </div>
-        </div>
-      </div>
-    </div>
-    
-    <!-- Scroll Indicator -->
-    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-      <svg class="w-6 h-6 accent-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
-      </svg>
-    </div>
-  </section>
-
-  <!-- Benefits Bar -->
-  <section class="bg-slate-50 py-8 shadow-sm relative z-20 border-y border-slate-200">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-        <div class="flex items-center gap-4 p-4">
-          <div class="w-14 h-14 bg-gray-100 rounded-xl flex items-center justify-center flex-shrink-0">
-            <svg class="w-7 h-7 accent-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M9 12h.01"/>
-            </svg>
-          </div>
-          <div>
-            <div class="font-semibold text-gray-800">Isolamento Acústico</div>
-            <div class="text-sm text-gray-500">Até 45dB de redução</div>
-          </div>
-        </div>
-        <div class="flex items-center gap-4 p-4">
-          <div class="w-14 h-14 bg-gray-100 rounded-xl flex items-center justify-center flex-shrink-0">
-            <svg class="w-7 h-7 accent-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707"/>
-            </svg>
-          </div>
-          <div>
-            <div class="font-semibold text-gray-800">Conforto Térmico</div>
-            <div class="text-sm text-gray-500">Economia de energia</div>
-          </div>
-        </div>
-        <div class="flex items-center gap-4 p-4">
-          <div class="w-14 h-14 bg-gray-100 rounded-xl flex items-center justify-center flex-shrink-0">
-            <svg class="w-7 h-7 accent-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
-            </svg>
-          </div>
-          <div>
-            <div class="font-semibold text-gray-800">Segurança</div>
-            <div class="text-sm text-gray-500">Vidros especiais</div>
-          </div>
-        </div>
-        <div class="flex items-center gap-4 p-4">
-          <div class="w-14 h-14 bg-gray-100 rounded-xl flex items-center justify-center flex-shrink-0">
-            <svg class="w-7 h-7 accent-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
-            </svg>
-          </div>
-          <div>
-            <div class="font-semibold text-gray-800">Valorização</div>
-            <div class="text-sm text-gray-500">Do seu imóvel</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Quem Somos Section -->
-  <section id="sobre" class="py-24 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid lg:grid-cols-2 gap-16 items-center">
-        <div>
-          <span class="accent-green font-semibold uppercase tracking-wider text-sm">Quem Somos</span>
-          <h2 class="font-heading text-4xl lg:text-5xl font-bold text-gray-900 mt-4 mb-6">
-            Excelência em <span class="accent-green">Esquadrias de Alumínio</span>
-          </h2>
-          <div class="w-20 h-1 bg-accent-green rounded-full mb-8"></div>
-          
-          <p class="text-gray-600 text-lg leading-relaxed mb-6">
-            Com mais de <strong>15 anos de experiência</strong> no mercado, somos especialistas na fabricação 
-            e instalação de esquadrias de alumínio sob medida. Nossa missão é proporcionar 
-            <strong>conforto, segurança e qualidade de vida</strong> através de soluções inovadoras.
-          </p>
-          
-          <p class="text-gray-600 text-lg leading-relaxed mb-8">
-            Atuamos em projetos <strong>residenciais, comerciais e corporativos</strong>, sempre com o 
-            compromisso de entregar produtos de alta performance que atendam às necessidades 
-            específicas de cada cliente.
-          </p>
-          
-          <div class="grid grid-cols-2 gap-6">
-            <div class="flex items-start gap-3">
-              <div class="w-6 h-6 bg-gray-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                <svg class="w-4 h-4 accent-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-                </svg>
-              </div>
-              <span class="text-gray-700">Equipe especializada e treinada</span>
-            </div>
-            <div class="flex items-start gap-3">
-              <div class="w-6 h-6 bg-gray-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                <svg class="w-4 h-4 accent-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-                </svg>
-              </div>
-              <span class="text-gray-700">Tecnologia de ponta</span>
-            </div>
-            <div class="flex items-start gap-3">
-              <div class="w-6 h-6 bg-gray-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                <svg class="w-4 h-4 accent-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-                </svg>
-              </div>
-              <span class="text-gray-700">Garantia de qualidade</span>
-            </div>
-            <div class="flex items-start gap-3">
-              <div class="w-6 h-6 bg-gray-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                <svg class="w-4 h-4 accent-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-                </svg>
-              </div>
-              <span class="text-gray-700">Atendimento personalizado</span>
-            </div>
-          </div>
-        </div>
-        
-        <div class="relative">
-          <div class="relative rounded-2xl overflow-hidden shadow-xl bg-gray-100">
-            <div class="aspect-[4/3] bg-gradient-to-br from-gray-50 to-gray-200 flex items-center justify-center">
-              <svg class="w-48 h-48 text-gray-300" viewBox="0 0 100 100" fill="currentColor">
-                <rect x="10" y="10" width="35" height="80" rx="3" fill="none" stroke="currentColor" stroke-width="2"/>
-                <rect x="55" y="10" width="35" height="80" rx="3" fill="none" stroke="currentColor" stroke-width="2"/>
-                <line x1="10" y1="45" x2="45" y2="45" stroke="currentColor" stroke-width="2"/>
-                <line x1="55" y1="45" x2="90" y2="45" stroke="currentColor" stroke-width="2"/>
-                <circle cx="40" cy="50" r="2" fill="currentColor"/>
-                <circle cx="60" cy="50" r="2" fill="currentColor"/>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Especialistas em esquadrias de alumínio sob medida e soluções acústicas. Janelas e portas com qualidade premium para seu conforto."
+    />
+    <title>Nova Acústica - Esquadrias de Alumínio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="src/css/style.css" />
+    <script src="/_sdk/element_sdk.js"></script>
+  </head>
+  <body class="h-full font-body text-gray-800 bg-slate-100 overflow-auto">
+    <!-- Navigation -->
+    <nav
+      id="navbar"
+      class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 glass-nav"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-20">
+          <div class="flex items-center gap-3">
+            <div
+              class="w-12 h-12 bg-accent-green rounded-lg flex items-center justify-center"
+            >
+              <svg
+                class="w-8 h-8 text-white"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+              >
+                <rect x="3" y="3" width="18" height="18" rx="2" />
+                <line x1="3" y1="9" x2="21" y2="9" />
+                <line x1="9" y1="9" x2="9" y2="21" />
+                <line x1="15" y1="9" x2="15" y2="21" />
               </svg>
             </div>
+            <span
+              id="nav-company-name"
+              class="font-heading text-lg sm:text-xl font-bold text-gray-900 leading-tight"
+              >Nova Acústica</span
+            >
           </div>
-          
-          <!-- Floating Card -->
-          <div class="absolute -bottom-8 -left-8 bg-white rounded-xl shadow-xl p-6 max-w-xs border border-gray-100">
-            <div class="flex items-center gap-4">
-              <div class="w-16 h-16 bg-accent-green rounded-full flex items-center justify-center">
-                <span class="text-white text-2xl font-bold">15+</span>
+
+          <!-- Desktop Menu -->
+          <div class="hidden lg:flex items-center gap-8">
+            <a
+              href="#home"
+              class="nav-link text-gray-700 hover:accent-green font-medium"
+              >Início</a
+            >
+            <a
+              href="#sobre"
+              class="nav-link text-gray-700 hover:accent-green font-medium"
+              >Quem Somos</a
+            >
+            <a
+              href="#produtos"
+              class="nav-link text-gray-700 hover:accent-green font-medium"
+              >Produtos</a
+            >
+            <a
+              href="#vidros"
+              class="nav-link text-gray-700 hover:accent-green font-medium"
+              >Vidros</a
+            >
+            <a
+              href="#diferenciais"
+              class="nav-link text-gray-700 hover:accent-green font-medium"
+              >Diferenciais</a
+            >
+            <a
+              href="#galeria"
+              class="nav-link text-gray-700 hover:accent-green font-medium"
+              >Galeria</a
+            >
+            <a
+              href="#contato"
+              class="bg-accent-green text-white px-6 py-2.5 rounded-full font-semibold hover:shadow-lg hover:shadow-green-500/30 transition-all"
+              >Contato</a
+            >
+          </div>
+
+          <!-- Mobile Menu Button -->
+          <button id="mobile-menu-btn" class="lg:hidden text-gray-800 p-2">
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="lg:hidden hidden glass-nav">
+        <div class="px-4 py-6 space-y-4">
+          <a
+            href="#home"
+            class="block text-gray-700 hover:accent-green font-medium py-2"
+            >Início</a
+          >
+          <a
+            href="#sobre"
+            class="block text-gray-700 hover:accent-green font-medium py-2"
+            >Quem Somos</a
+          >
+          <a
+            href="#produtos"
+            class="block text-gray-700 hover:accent-green font-medium py-2"
+            >Produtos</a
+          >
+          <a
+            href="#vidros"
+            class="block text-gray-700 hover:accent-green font-medium py-2"
+            >Vidros</a
+          >
+          <a
+            href="#diferenciais"
+            class="block text-gray-700 hover:accent-green font-medium py-2"
+            >Diferenciais</a
+          >
+          <a
+            href="#galeria"
+            class="block text-gray-700 hover:accent-green font-medium py-2"
+            >Galeria</a
+          >
+          <a
+            href="#contato"
+            class="block bg-accent-green text-white px-6 py-3 rounded-full font-semibold text-center mt-4"
+            >Contato</a
+          >
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section
+      id="home"
+      class="relative min-h-screen gradient-hero flex items-center overflow-hidden pt-20"
+    >
+      <div class="absolute inset-0 overflow-hidden">
+        <div class="hero-photo absolute inset-0"></div>
+        <div class="hero-blueprint absolute inset-0"></div>
+        <div
+          class="absolute top-20 right-10 w-72 h-72 bg-green-400/20 rounded-full blur-3xl animate-float"
+        ></div>
+        <div
+          class="absolute bottom-20 left-10 w-96 h-96 bg-slate-900/10 rounded-full blur-3xl animate-float"
+          style="animation-delay: -3s"
+        ></div>
+
+        <!-- Window Pattern SVG -->
+        <svg
+          class="absolute right-0 top-1/2 -translate-y-1/2 w-1/2 h-auto opacity-10"
+          viewBox="0 0 400 400"
+        >
+          <defs>
+            <linearGradient id="windowGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color: #10b981" />
+              <stop offset="100%" style="stop-color: #059669" />
+            </linearGradient>
+          </defs>
+          <rect
+            x="50"
+            y="50"
+            width="300"
+            height="300"
+            fill="none"
+            stroke="url(#windowGrad)"
+            stroke-width="4"
+            rx="10"
+          />
+          <line
+            x1="50"
+            y1="150"
+            x2="350"
+            y2="150"
+            stroke="url(#windowGrad)"
+            stroke-width="2"
+          />
+          <line
+            x1="200"
+            y1="50"
+            x2="200"
+            y2="350"
+            stroke="url(#windowGrad)"
+            stroke-width="2"
+          />
+          <rect
+            x="70"
+            y="70"
+            width="110"
+            height="60"
+            fill="url(#windowGrad)"
+            opacity="0.3"
+            rx="4"
+          />
+          <rect
+            x="220"
+            y="70"
+            width="110"
+            height="60"
+            fill="url(#windowGrad)"
+            opacity="0.2"
+            rx="4"
+          />
+          <rect
+            x="70"
+            y="170"
+            width="110"
+            height="160"
+            fill="url(#windowGrad)"
+            opacity="0.2"
+            rx="4"
+          />
+          <rect
+            x="220"
+            y="170"
+            width="110"
+            height="160"
+            fill="url(#windowGrad)"
+            opacity="0.3"
+            rx="4"
+          />
+        </svg>
+      </div>
+
+      <div
+        class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 sm:py-28 lg:py-32"
+      >
+        <div class="max-w-3xl">
+          <h1
+            id="hero-title"
+            class="font-heading text-3xl sm:text-5xl lg:text-6xl font-bold text-gray-100 leading-tight mb-6"
+          >
+            Esquadrias de Alumínio<br />
+            <span class="accent-green">Sob Medida</span>
+          </h1>
+
+          <p
+            id="hero-subtitle"
+            class="text-lg sm:text-xl text-gray-200 mb-10 max-w-2xl leading-relaxed"
+          >
+            Transformamos ambientes com janelas e portas de alta performance.
+            Conforto térmico, isolamento acústico e design sofisticado para sua
+            casa ou empresa.
+          </p>
+
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a
+              href="#contato"
+              class="bg-accent-green text-white px-8 py-4 rounded-full font-semibold text-center hover:shadow-lg hover:shadow-green-500/30 transition-all inline-flex items-center justify-center gap-2"
+            >
+              <span>Solicitar Orçamento</span>
+              <svg
+                class="w-5 h-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M17 8l4 4m0 0l-4 4m4-4H3"
+                />
+              </svg>
+            </a>
+            <a
+              href="#produtos"
+              class="bg-slate-900 text-gray-100 px-8 py-4 rounded-full font-semibold text-center hover:bg-black transition-all border border-slate-800"
+            >
+              Conheça Nossos Produtos
+            </a>
+          </div>
+
+          <!-- Stats -->
+          <div
+            class="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 mt-16 pt-8 border-t border-slate-400/60"
+          >
+            <div>
+              <div class="text-3xl sm:text-4xl font-bold text-white">15+</div>
+              <div class="text-gray-200 text-sm mt-1">Anos de Experiência</div>
+            </div>
+            <div>
+              <div class="text-3xl sm:text-4xl font-bold text-white">500+</div>
+              <div class="text-gray-200 text-sm mt-1">Projetos Realizados</div>
+            </div>
+            <div>
+              <div class="text-3xl sm:text-4xl font-bold text-white">98%</div>
+              <div class="text-gray-200 text-sm mt-1">Clientes Satisfeitos</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scroll Indicator -->
+      <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+        <svg
+          class="w-6 h-6 accent-green"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M19 14l-7 7m0 0l-7-7m7 7V3"
+          />
+        </svg>
+      </div>
+    </section>
+
+    <!-- Benefits Bar -->
+    <section
+      class="bg-slate-50 py-8 shadow-sm relative z-20 border-y border-slate-200"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+          <div class="flex items-center gap-4 p-4">
+            <div
+              class="w-14 h-14 bg-gray-100 rounded-xl flex items-center justify-center flex-shrink-0"
+            >
+              <svg
+                class="w-7 h-7 accent-green"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M9 12h.01"
+                />
+              </svg>
+            </div>
+            <div>
+              <div class="font-semibold text-gray-800">Isolamento Acústico</div>
+              <div class="text-sm text-gray-500">Até 45dB de redução</div>
+            </div>
+          </div>
+          <div class="flex items-center gap-4 p-4">
+            <div
+              class="w-14 h-14 bg-gray-100 rounded-xl flex items-center justify-center flex-shrink-0"
+            >
+              <svg
+                class="w-7 h-7 accent-green"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707"
+                />
+              </svg>
+            </div>
+            <div>
+              <div class="font-semibold text-gray-800">Conforto Térmico</div>
+              <div class="text-sm text-gray-500">Economia de energia</div>
+            </div>
+          </div>
+          <div class="flex items-center gap-4 p-4">
+            <div
+              class="w-14 h-14 bg-gray-100 rounded-xl flex items-center justify-center flex-shrink-0"
+            >
+              <svg
+                class="w-7 h-7 accent-green"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+                />
+              </svg>
+            </div>
+            <div>
+              <div class="font-semibold text-gray-800">Segurança</div>
+              <div class="text-sm text-gray-500">Vidros especiais</div>
+            </div>
+          </div>
+          <div class="flex items-center gap-4 p-4">
+            <div
+              class="w-14 h-14 bg-gray-100 rounded-xl flex items-center justify-center flex-shrink-0"
+            >
+              <svg
+                class="w-7 h-7 accent-green"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M13 10V3L4 14h7v7l9-11h-7z"
+                />
+              </svg>
+            </div>
+            <div>
+              <div class="font-semibold text-gray-800">Valorização</div>
+              <div class="text-sm text-gray-500">Do seu imóvel</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quem Somos Section -->
+    <section id="sobre" class="py-24 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+          <div>
+            <span
+              class="accent-green font-semibold uppercase tracking-wider text-sm"
+              >Quem Somos</span
+            >
+            <h2
+              class="font-heading text-4xl lg:text-5xl font-bold text-gray-900 mt-4 mb-6"
+            >
+              Excelência em
+              <span class="accent-green">Esquadrias de Alumínio</span>
+            </h2>
+            <div class="w-20 h-1 bg-accent-green rounded-full mb-8"></div>
+
+            <p class="text-gray-600 text-lg leading-relaxed mb-6">
+              Com mais de <strong>15 anos de experiência</strong> no mercado,
+              somos especialistas na fabricação e instalação de esquadrias de
+              alumínio sob medida. Nossa missão é proporcionar
+              <strong>conforto, segurança e qualidade de vida</strong> através
+              de soluções inovadoras.
+            </p>
+
+            <p class="text-gray-600 text-lg leading-relaxed mb-8">
+              Atuamos em projetos
+              <strong>residenciais, comerciais e corporativos</strong>, sempre
+              com o compromisso de entregar produtos de alta performance que
+              atendam às necessidades específicas de cada cliente.
+            </p>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <div class="flex items-start gap-3">
+                <div
+                  class="w-6 h-6 bg-gray-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1"
+                >
+                  <svg
+                    class="w-4 h-4 accent-green"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M5 13l4 4L19 7"
+                    />
+                  </svg>
+                </div>
+                <span class="text-gray-700"
+                  >Equipe especializada e treinada</span
+                >
+              </div>
+              <div class="flex items-start gap-3">
+                <div
+                  class="w-6 h-6 bg-gray-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1"
+                >
+                  <svg
+                    class="w-4 h-4 accent-green"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M5 13l4 4L19 7"
+                    />
+                  </svg>
+                </div>
+                <span class="text-gray-700">Tecnologia de ponta</span>
+              </div>
+              <div class="flex items-start gap-3">
+                <div
+                  class="w-6 h-6 bg-gray-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1"
+                >
+                  <svg
+                    class="w-4 h-4 accent-green"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M5 13l4 4L19 7"
+                    />
+                  </svg>
+                </div>
+                <span class="text-gray-700">Garantia de qualidade</span>
+              </div>
+              <div class="flex items-start gap-3">
+                <div
+                  class="w-6 h-6 bg-gray-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1"
+                >
+                  <svg
+                    class="w-4 h-4 accent-green"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M5 13l4 4L19 7"
+                    />
+                  </svg>
+                </div>
+                <span class="text-gray-700">Atendimento personalizado</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="relative">
+            <div
+              class="relative rounded-2xl overflow-hidden shadow-xl bg-gray-100"
+            >
+              <div
+                class="aspect-[4/3] bg-gradient-to-br from-gray-50 to-gray-200 flex items-center justify-center"
+              >
+                <svg
+                  class="w-48 h-48 text-gray-300"
+                  viewBox="0 0 100 100"
+                  fill="currentColor"
+                >
+                  <rect
+                    x="10"
+                    y="10"
+                    width="35"
+                    height="80"
+                    rx="3"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  />
+                  <rect
+                    x="55"
+                    y="10"
+                    width="35"
+                    height="80"
+                    rx="3"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  />
+                  <line
+                    x1="10"
+                    y1="45"
+                    x2="45"
+                    y2="45"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  />
+                  <line
+                    x1="55"
+                    y1="45"
+                    x2="90"
+                    y2="45"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  />
+                  <circle cx="40" cy="50" r="2" fill="currentColor" />
+                  <circle cx="60" cy="50" r="2" fill="currentColor" />
+                </svg>
+              </div>
+            </div>
+
+            <!-- Floating Card -->
+            <div
+              class="relative lg:absolute lg:-bottom-8 lg:-left-8 mt-6 lg:mt-0 bg-white rounded-xl shadow-xl p-6 max-w-xs border border-gray-100"
+            >
+              <div class="flex items-center gap-4">
+                <div
+                  class="w-16 h-16 bg-accent-green rounded-full flex items-center justify-center"
+                >
+                  <span class="text-white text-2xl font-bold">15+</span>
+                </div>
+                <div>
+                  <div class="font-bold text-gray-800 text-lg">Anos</div>
+                  <div class="text-gray-500">de Experiência</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Produtos Section -->
+    <section id="produtos" class="py-24 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <span
+            class="accent-green font-semibold uppercase tracking-wider text-sm"
+            >Produtos e Soluções</span
+          >
+          <h2
+            class="font-heading text-4xl lg:text-5xl font-bold text-gray-900 mt-4 mb-6"
+          >
+            Nossas <span class="accent-green">Soluções</span>
+          </h2>
+          <div class="w-20 h-1 bg-accent-green rounded-full mx-auto mb-6"></div>
+          <p class="text-gray-600 text-lg">
+            Oferecemos uma linha completa de esquadrias de alumínio, desde
+            modelos convencionais até soluções acústicas de alta performance.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8 mb-16">
+          <!-- Janelas e Portas -->
+          <div
+            class="bg-white rounded-2xl p-8 card-hover border border-gray-200"
+          >
+            <div
+              class="w-16 h-16 bg-accent-green rounded-xl flex items-center justify-center mb-6"
+            >
+              <svg
+                class="w-8 h-8 text-white"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+              >
+                <rect x="3" y="3" width="18" height="18" rx="2" />
+                <line x1="3" y1="12" x2="21" y2="12" />
+                <line x1="12" y1="3" x2="12" y2="21" />
+              </svg>
+            </div>
+            <h3 class="font-heading text-2xl font-bold text-gray-900 mb-4">
+              Janelas e Portas Sob Medida
+            </h3>
+            <p class="text-gray-600 mb-6">
+              Fabricação personalizada conforme o projeto do cliente, com
+              acabamento premium e materiais de primeira qualidade.
+            </p>
+            <div class="grid grid-cols-2 gap-3">
+              <div class="flex items-center gap-2 text-gray-700">
+                <svg
+                  class="w-5 h-5 accent-green"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9 5l7 7-7 7"
+                  />
+                </svg>
+                <span class="text-sm">Portas de correr</span>
+              </div>
+              <div class="flex items-center gap-2 text-gray-700">
+                <svg
+                  class="w-5 h-5 accent-green"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9 5l7 7-7 7"
+                  />
+                </svg>
+                <span class="text-sm">Portas de abrir</span>
+              </div>
+              <div class="flex items-center gap-2 text-gray-700">
+                <svg
+                  class="w-5 h-5 accent-green"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9 5l7 7-7 7"
+                  />
+                </svg>
+                <span class="text-sm">Janelas de correr</span>
+              </div>
+              <div class="flex items-center gap-2 text-gray-700">
+                <svg
+                  class="w-5 h-5 accent-green"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9 5l7 7-7 7"
+                  />
+                </svg>
+                <span class="text-sm">Janelas de abrir</span>
+              </div>
+              <div class="flex items-center gap-2 text-gray-700">
+                <svg
+                  class="w-5 h-5 accent-green"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9 5l7 7-7 7"
+                  />
+                </svg>
+                <span class="text-sm">Max-ar</span>
+              </div>
+              <div class="flex items-center gap-2 text-gray-700">
+                <svg
+                  class="w-5 h-5 accent-green"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9 5l7 7-7 7"
+                  />
+                </svg>
+                <span class="text-sm">Painéis fixos</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Soluções Acústicas -->
+          <div
+            class="bg-white rounded-2xl p-8 card-hover border-2 border-accent-green"
+          >
+            <div
+              class="w-16 h-16 bg-gray-100 rounded-xl flex items-center justify-center mb-6"
+            >
+              <svg
+                class="w-8 h-8 accent-green"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+              >
+                <path
+                  d="M15.536 8.464a5 5 0 010 7.072M18.364 5.636a9 9 0 010 12.728"
+                />
+                <path
+                  d="M8.464 15.536a5 5 0 010-7.072M5.636 18.364a9 9 0 010-12.728"
+                />
+                <circle cx="12" cy="12" r="2" />
+              </svg>
+            </div>
+            <h3 class="font-heading text-2xl font-bold text-gray-900 mb-4">
+              Soluções Acústicas
+            </h3>
+            <p class="text-gray-700 mb-6">
+              Janelas e portas com tratamento acústico especial para ambientes
+              que exigem máximo conforto e silêncio.
+            </p>
+            <div class="space-y-4">
+              <div class="flex items-start gap-3">
+                <div
+                  class="w-6 h-6 bg-gray-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5"
+                >
+                  <svg
+                    class="w-4 h-4 accent-green"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M5 13l4 4L19 7"
+                    />
+                  </svg>
+                </div>
+                <span class="text-gray-700"
+                  >Redução significativa de ruídos externos (até 45dB)</span
+                >
+              </div>
+              <div class="flex items-start gap-3">
+                <div
+                  class="w-6 h-6 bg-gray-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5"
+                >
+                  <svg
+                    class="w-4 h-4 accent-green"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M5 13l4 4L19 7"
+                    />
+                  </svg>
+                </div>
+                <span class="text-gray-700"
+                  >Ideal para residências, escritórios e estúdios</span
+                >
+              </div>
+              <div class="flex items-start gap-3">
+                <div
+                  class="w-6 h-6 bg-gray-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5"
+                >
+                  <svg
+                    class="w-4 h-4 accent-green"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M5 13l4 4L19 7"
+                    />
+                  </svg>
+                </div>
+                <span class="text-gray-700"
+                  >Melhora na qualidade de vida e bem-estar</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product Types Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+          <div
+            class="bg-white rounded-xl p-6 text-center card-hover border border-gray-200"
+          >
+            <div
+              class="w-20 h-20 mx-auto mb-4 bg-gray-50 rounded-xl flex items-center justify-center"
+            >
+              <svg
+                class="w-10 h-10 accent-green"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+              >
+                <rect x="4" y="4" width="16" height="16" rx="1" />
+                <line x1="12" y1="4" x2="12" y2="20" />
+                <path d="M4 12h3" />
+                <path d="M17 12h3" />
+              </svg>
+            </div>
+            <h4 class="font-semibold text-gray-800 mb-1">Portas de Correr</h4>
+            <p class="text-sm text-gray-500">Praticidade e elegância</p>
+          </div>
+
+          <div
+            class="bg-white rounded-xl p-6 text-center card-hover border border-gray-200"
+          >
+            <div
+              class="w-20 h-20 mx-auto mb-4 bg-gray-50 rounded-xl flex items-center justify-center"
+            >
+              <svg
+                class="w-10 h-10 accent-green"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+              >
+                <rect x="4" y="4" width="16" height="16" rx="1" />
+                <path d="M20 4L20 20" stroke-width="2" />
+                <circle cx="18" cy="12" r="1" fill="currentColor" />
+              </svg>
+            </div>
+            <h4 class="font-semibold text-gray-800 mb-1">Portas de Abrir</h4>
+            <p class="text-sm text-gray-500">Lateral ou total</p>
+          </div>
+
+          <div
+            class="bg-white rounded-xl p-6 text-center card-hover border border-gray-200"
+          >
+            <div
+              class="w-20 h-20 mx-auto mb-4 bg-gray-50 rounded-xl flex items-center justify-center"
+            >
+              <svg
+                class="w-10 h-10 accent-green"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+              >
+                <rect x="3" y="6" width="18" height="12" rx="1" />
+                <line x1="3" y1="12" x2="21" y2="12" />
+                <line x1="12" y1="6" x2="12" y2="18" />
+              </svg>
+            </div>
+            <h4 class="font-semibold text-gray-800 mb-1">Janelas de Correr</h4>
+            <p class="text-sm text-gray-500">2, 3 ou 4 folhas</p>
+          </div>
+
+          <div
+            class="bg-white rounded-xl p-6 text-center card-hover border border-gray-200"
+          >
+            <div
+              class="w-20 h-20 mx-auto mb-4 bg-gray-50 rounded-xl flex items-center justify-center"
+            >
+              <svg
+                class="w-10 h-10 accent-green"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+              >
+                <rect x="4" y="8" width="16" height="10" rx="1" />
+                <path d="M4 8L12 4L20 8" />
+              </svg>
+            </div>
+            <h4 class="font-semibold text-gray-800 mb-1">Max-ar</h4>
+            <p class="text-sm text-gray-500">Banheiros e cozinhas</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tipos de Vidros Section -->
+    <section id="vidros" class="py-24 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <span
+            class="accent-green font-semibold uppercase tracking-wider text-sm"
+            >Tecnologia em Vidros</span
+          >
+          <h2
+            class="font-heading text-4xl lg:text-5xl font-bold text-gray-900 mt-4 mb-6"
+          >
+            Tipos de <span class="accent-green">Vidros</span>
+          </h2>
+          <div class="w-20 h-1 bg-accent-green rounded-full mx-auto mb-6"></div>
+          <p class="text-gray-600 text-lg">
+            Conheça as opções de vidros disponíveis e suas características para
+            escolher a melhor solução para seu projeto.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Vidro Comum -->
+          <div class="bg-gray-50 rounded-2xl p-6 shadow-sm card-hover">
+            <div class="flex items-center gap-4 mb-4">
+              <div
+                class="w-12 h-12 bg-gray-200 rounded-xl flex items-center justify-center"
+              >
+                <svg
+                  class="w-6 h-6 text-gray-600"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                >
+                  <rect x="4" y="4" width="16" height="16" rx="2" />
+                </svg>
+              </div>
+              <h3 class="font-semibold text-xl text-gray-800">Vidro Comum</h3>
+            </div>
+            <p class="text-gray-600 mb-4">
+              Opção básica para ambientes internos sem necessidades especiais de
+              isolamento.
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span
+                class="px-3 py-1 bg-gray-200 text-gray-700 rounded-full text-sm"
+                >Econômico</span
+              >
+              <span
+                class="px-3 py-1 bg-gray-200 text-gray-700 rounded-full text-sm"
+                >Básico</span
+              >
+            </div>
+          </div>
+
+          <!-- Vidro Laminado -->
+          <div class="bg-gray-50 rounded-2xl p-6 shadow-sm card-hover">
+            <div class="flex items-center gap-4 mb-4">
+              <div
+                class="w-12 h-12 bg-gray-100 rounded-xl flex items-center justify-center"
+              >
+                <svg
+                  class="w-6 h-6 accent-green"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                >
+                  <rect x="4" y="4" width="16" height="16" rx="2" />
+                  <line x1="4" y1="10" x2="20" y2="10" stroke-dasharray="2 2" />
+                </svg>
+              </div>
+              <h3 class="font-semibold text-xl text-gray-800">
+                Vidro Laminado
+              </h3>
+            </div>
+            <p class="text-gray-600 mb-4">
+              Duas ou mais lâminas de vidro com película interna. Maior
+              segurança e proteção UV.
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span
+                class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm"
+                >Segurança</span
+              >
+              <span
+                class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm"
+                >Proteção UV</span
+              >
+            </div>
+          </div>
+
+          <!-- Vidro Duplo -->
+          <div class="bg-gray-50 rounded-2xl p-6 shadow-sm card-hover">
+            <div class="flex items-center gap-4 mb-4">
+              <div
+                class="w-12 h-12 bg-gray-100 rounded-xl flex items-center justify-center"
+              >
+                <svg
+                  class="w-6 h-6 accent-green"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                >
+                  <rect x="3" y="4" width="8" height="16" rx="1" />
+                  <rect x="13" y="4" width="8" height="16" rx="1" />
+                </svg>
+              </div>
+              <h3 class="font-semibold text-xl text-gray-800">Vidro Duplo</h3>
+            </div>
+            <p class="text-gray-600 mb-4">
+              Duas lâminas com câmara de ar. Excelente isolamento térmico e
+              acústico inicial.
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span
+                class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm"
+                >Térmico</span
+              >
+              <span
+                class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm"
+                >Acústico</span
+              >
+            </div>
+          </div>
+
+          <!-- Vidro Triplo -->
+          <div
+            class="bg-white rounded-2xl p-6 shadow-lg card-hover border-2 border-accent-green"
+          >
+            <div class="flex items-center gap-4 mb-4">
+              <div
+                class="w-12 h-12 bg-accent-green rounded-xl flex items-center justify-center"
+              >
+                <svg
+                  class="w-6 h-6 text-white"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                >
+                  <rect x="2" y="4" width="6" height="16" rx="1" />
+                  <rect x="9" y="4" width="6" height="16" rx="1" />
+                  <rect x="16" y="4" width="6" height="16" rx="1" />
+                </svg>
               </div>
               <div>
-                <div class="font-bold text-gray-800 text-lg">Anos</div>
-                <div class="text-gray-500">de Experiência</div>
+                <h3 class="font-semibold text-xl text-gray-800">
+                  Vidro Triplo
+                </h3>
+                <span class="text-xs accent-green font-medium"
+                  >RECOMENDADO</span
+                >
               </div>
+            </div>
+            <p class="text-gray-600 mb-4">
+              Três lâminas com duas câmaras. Alta performance em isolamento
+              térmico e acústico.
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span
+                class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm"
+                >Alta Performance</span
+              >
+              <span
+                class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm"
+                >Premium</span
+              >
+            </div>
+          </div>
+
+          <!-- Vidro Quádruplo -->
+          <div class="bg-gray-50 rounded-2xl p-6 shadow-sm card-hover">
+            <div class="flex items-center gap-4 mb-4">
+              <div
+                class="w-12 h-12 bg-gray-200 rounded-xl flex items-center justify-center"
+              >
+                <svg
+                  class="w-6 h-6 text-gray-700"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                >
+                  <rect x="2" y="4" width="4" height="16" rx="1" />
+                  <rect x="7" y="4" width="4" height="16" rx="1" />
+                  <rect x="12" y="4" width="4" height="16" rx="1" />
+                  <rect x="17" y="4" width="4" height="16" rx="1" />
+                </svg>
+              </div>
+              <h3 class="font-semibold text-xl text-gray-800">
+                Vidro Quádruplo
+              </h3>
+            </div>
+            <p class="text-gray-600 mb-4">
+              Máximo isolamento para ambientes que exigem silêncio absoluto e
+              controle térmico total.
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span
+                class="px-3 py-1 bg-gray-200 text-gray-700 rounded-full text-sm"
+                >Máximo Isolamento</span
+              >
+              <span
+                class="px-3 py-1 bg-gray-200 text-gray-700 rounded-full text-sm"
+                >Exclusivo</span
+              >
+            </div>
+          </div>
+
+          <!-- Vidro Multilaminado -->
+          <div class="bg-gray-50 rounded-2xl p-6 shadow-sm card-hover">
+            <div class="flex items-center gap-4 mb-4">
+              <div
+                class="w-12 h-12 bg-gray-200 rounded-xl flex items-center justify-center"
+              >
+                <svg
+                  class="w-6 h-6 text-gray-700"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                >
+                  <rect x="4" y="4" width="16" height="16" rx="2" />
+                  <path d="M4 8h16M4 12h16M4 16h16" />
+                </svg>
+              </div>
+              <h3 class="font-semibold text-xl text-gray-800">Multilaminado</h3>
+            </div>
+            <p class="text-gray-600 mb-4">
+              Vidro anti-vandalismo com múltiplas camadas. Máxima segurança e
+              resistência a impactos.
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span
+                class="px-3 py-1 bg-gray-200 text-gray-700 rounded-full text-sm"
+                >Anti-vandalismo</span
+              >
+              <span
+                class="px-3 py-1 bg-gray-200 text-gray-700 rounded-full text-sm"
+                >Blindagem</span
+              >
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Produtos Section -->
-  <section id="produtos" class="py-24 bg-gray-50">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center max-w-3xl mx-auto mb-16">
-        <span class="accent-green font-semibold uppercase tracking-wider text-sm">Produtos e Soluções</span>
-        <h2 class="font-heading text-4xl lg:text-5xl font-bold text-gray-900 mt-4 mb-6">
-          Nossas <span class="accent-green">Soluções</span>
-        </h2>
-        <div class="w-20 h-1 bg-accent-green rounded-full mx-auto mb-6"></div>
-        <p class="text-gray-600 text-lg">
-          Oferecemos uma linha completa de esquadrias de alumínio, 
-          desde modelos convencionais até soluções acústicas de alta performance.
-        </p>
-      </div>
-      
-      <div class="grid md:grid-cols-2 gap-8 mb-16">
-        <!-- Janelas e Portas -->
-        <div class="bg-white rounded-2xl p-8 card-hover border border-gray-200">
-          <div class="w-16 h-16 bg-accent-green rounded-xl flex items-center justify-center mb-6">
-            <svg class="w-8 h-8 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <rect x="3" y="3" width="18" height="18" rx="2"/>
-              <line x1="3" y1="12" x2="21" y2="12"/>
-              <line x1="12" y1="3" x2="12" y2="21"/>
-            </svg>
+    <!-- Diferenciais Section -->
+    <section id="diferenciais" class="py-24 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <span
+            class="accent-green font-semibold uppercase tracking-wider text-sm"
+            >Por que nos escolher</span
+          >
+          <h2
+            class="font-heading text-4xl lg:text-5xl font-bold text-gray-900 mt-4 mb-6"
+          >
+            Nossos <span class="accent-green">Diferenciais</span>
+          </h2>
+          <div class="w-20 h-1 bg-accent-green rounded-full mx-auto"></div>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div class="text-center p-8">
+            <div
+              class="w-20 h-20 bg-accent-green rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg shadow-green-500/20"
+            >
+              <svg
+                class="w-10 h-10 text-white"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+              >
+                <path
+                  d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"
+                />
+              </svg>
+            </div>
+            <h3 class="font-heading text-xl font-bold text-gray-800 mb-3">
+              Produção Sob Medida
+            </h3>
+            <p class="text-gray-600">
+              Cada projeto é único. Fabricamos de acordo com as especificações
+              exatas do seu ambiente.
+            </p>
           </div>
-          <h3 class="font-heading text-2xl font-bold text-gray-900 mb-4">Janelas e Portas Sob Medida</h3>
-          <p class="text-gray-600 mb-6">
-            Fabricação personalizada conforme o projeto do cliente, 
-            com acabamento premium e materiais de primeira qualidade.
+
+          <div class="text-center p-8">
+            <div
+              class="w-20 h-20 bg-accent-green rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg shadow-green-500/20"
+            >
+              <svg
+                class="w-10 h-10 text-white"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+              >
+                <path
+                  d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+                />
+              </svg>
+            </div>
+            <h3 class="font-heading text-xl font-bold text-gray-800 mb-3">
+              Materiais Premium
+            </h3>
+            <p class="text-gray-600">
+              Alumínio de alta qualidade, vidros especiais e acessórios de
+              primeira linha.
+            </p>
+          </div>
+
+          <div class="text-center p-8">
+            <div
+              class="w-20 h-20 bg-accent-green rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg shadow-green-500/20"
+            >
+              <svg
+                class="w-10 h-10 text-white"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+              >
+                <path
+                  d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"
+                />
+              </svg>
+            </div>
+            <h3 class="font-heading text-xl font-bold text-gray-800 mb-3">
+              Design Moderno
+            </h3>
+            <p class="text-gray-600">
+              Padrões nacionais e europeus com acabamento sofisticado e
+              elegante.
+            </p>
+          </div>
+
+          <div class="text-center p-8">
+            <div
+              class="w-20 h-20 bg-accent-green rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg shadow-green-500/20"
+            >
+              <svg
+                class="w-10 h-10 text-white"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+              >
+                <path
+                  d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M9 12h.01"
+                />
+              </svg>
+            </div>
+            <h3 class="font-heading text-xl font-bold text-gray-800 mb-3">
+              Tratamento Acústico
+            </h3>
+            <p class="text-gray-600">
+              Tecnologia avançada para redução de ruídos e máximo conforto
+              acústico.
+            </p>
+          </div>
+
+          <div class="text-center p-8">
+            <div
+              class="w-20 h-20 bg-accent-green rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg shadow-green-500/20"
+            >
+              <svg
+                class="w-10 h-10 text-white"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+              >
+                <path
+                  d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"
+                />
+              </svg>
+            </div>
+            <h3 class="font-heading text-xl font-bold text-gray-800 mb-3">
+              Instalação Especializada
+            </h3>
+            <p class="text-gray-600">
+              Equipe técnica treinada para instalação perfeita e acabamento
+              impecável.
+            </p>
+          </div>
+
+          <div class="text-center p-8">
+            <div
+              class="w-20 h-20 bg-accent-green rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg shadow-green-500/20"
+            >
+              <svg
+                class="w-10 h-10 text-white"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+              >
+                <path d="M11 3.055A9.001 9.001 0 1120.945 13H11V3.055z" />
+                <path d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z" />
+              </svg>
+            </div>
+            <h3 class="font-heading text-xl font-bold text-gray-800 mb-3">
+              Soluções Personalizadas
+            </h3>
+            <p class="text-gray-600">
+              Projetos adaptados às necessidades específicas de cada cliente.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Galeria Section -->
+    <section id="galeria" class="py-24 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <span
+            class="accent-green font-semibold uppercase tracking-wider text-sm"
+            >Nosso Portfólio</span
+          >
+          <h2
+            class="font-heading text-4xl lg:text-5xl font-bold text-gray-900 mt-4 mb-6"
+          >
+            Galeria de <span class="accent-green">Projetos</span>
+          </h2>
+          <div class="w-20 h-1 bg-accent-green rounded-full mx-auto mb-6"></div>
+          <p class="text-gray-600 text-lg">
+            Confira alguns dos nossos projetos realizados em residências e
+            empresas.
           </p>
-          <div class="grid grid-cols-2 gap-3">
-            <div class="flex items-center gap-2 text-gray-700">
-              <svg class="w-5 h-5 accent-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-              </svg>
-              <span class="text-sm">Portas de correr</span>
-            </div>
-            <div class="flex items-center gap-2 text-gray-700">
-              <svg class="w-5 h-5 accent-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-              </svg>
-              <span class="text-sm">Portas de abrir</span>
-            </div>
-            <div class="flex items-center gap-2 text-gray-700">
-              <svg class="w-5 h-5 accent-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-              </svg>
-              <span class="text-sm">Janelas de correr</span>
-            </div>
-            <div class="flex items-center gap-2 text-gray-700">
-              <svg class="w-5 h-5 accent-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-              </svg>
-              <span class="text-sm">Janelas de abrir</span>
-            </div>
-            <div class="flex items-center gap-2 text-gray-700">
-              <svg class="w-5 h-5 accent-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-              </svg>
-              <span class="text-sm">Max-ar</span>
-            </div>
-            <div class="flex items-center gap-2 text-gray-700">
-              <svg class="w-5 h-5 accent-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-              </svg>
-              <span class="text-sm">PainÃ©is fixos</span>
-            </div>
+        </div>
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+          <div
+            class="gallery-item rounded-2xl overflow-hidden shadow-lg aspect-square sm:aspect-square aspect-[4/5]"
+          >
+            <img
+              src="src/img/WhatsApp%20Image%202026-02-09%20at%2021.16.17%20(1).jpeg"
+              alt="Projeto Nova Acústica"
+              class="w-full h-full object-cover"
+              loading="lazy"
+            />
+          </div>
+
+          <div
+            class="gallery-item rounded-2xl overflow-hidden shadow-lg aspect-square sm:aspect-square aspect-[4/5]"
+          >
+            <img
+              src="src/img/WhatsApp%20Image%202026-02-09%20at%2021.16.17%20(2).jpeg"
+              alt="Projeto Nova Acústica"
+              class="w-full h-full object-cover"
+              loading="lazy"
+            />
+          </div>
+
+          <div
+            class="gallery-item rounded-2xl overflow-hidden shadow-lg aspect-square sm:aspect-square aspect-[4/5]"
+          >
+            <img
+              src="src/img/WhatsApp%20Image%202026-02-09%20at%2021.16.17%20(3).jpeg"
+              alt="Projeto Nova Acústica"
+              class="w-full h-full object-cover"
+              loading="lazy"
+            />
+          </div>
+
+          <div
+            class="gallery-item rounded-2xl overflow-hidden shadow-lg aspect-square sm:aspect-square aspect-[4/5]"
+          >
+            <img
+              src="src/img/WhatsApp%20Image%202026-02-09%20at%2021.16.17%20(4).jpeg"
+              alt="Projeto Nova Acústica"
+              class="w-full h-full object-cover"
+              loading="lazy"
+            />
+          </div>
+
+          <div
+            class="gallery-item rounded-2xl overflow-hidden shadow-lg aspect-square sm:aspect-square aspect-[4/5]"
+          >
+            <img
+              src="src/img/WhatsApp%20Image%202026-02-09%20at%2021.16.17%20(5).jpeg"
+              alt="Projeto Nova Acústica"
+              class="w-full h-full object-cover"
+              loading="lazy"
+            />
+          </div>
+
+          <div
+            class="gallery-item rounded-2xl overflow-hidden shadow-lg aspect-square sm:aspect-square aspect-[4/5]"
+          >
+            <img
+              src="src/img/WhatsApp%20Image%202026-02-09%20at%2021.16.17.jpeg"
+              alt="Projeto Nova Acústica"
+              class="w-full h-full object-cover"
+              loading="lazy"
+            />
+          </div>
+
+          <div
+            class="gallery-item rounded-2xl overflow-hidden shadow-lg aspect-square sm:aspect-square aspect-[4/5]"
+          >
+            <img
+              src="src/img/WhatsApp%20Image%202026-02-09%20at%2021.16.18%20(1).jpeg"
+              alt="Projeto Nova Acústica"
+              class="w-full h-full object-cover"
+              loading="lazy"
+            />
+          </div>
+
+          <div
+            class="gallery-item rounded-2xl overflow-hidden shadow-lg aspect-square sm:aspect-square aspect-[4/5]"
+          >
+            <img
+              src="src/img/WhatsApp%20Image%202026-02-09%20at%2021.16.18%20(2).jpeg"
+              alt="Projeto Nova Acústica"
+              class="w-full h-full object-cover"
+              loading="lazy"
+            />
+          </div>
+
+          <div
+            class="gallery-item rounded-2xl overflow-hidden shadow-lg aspect-square sm:aspect-square aspect-[4/5]"
+          >
+            <img
+              src="src/img/WhatsApp%20Image%202026-02-09%20at%2021.16.18%20(3).jpeg"
+              alt="Projeto Nova Acústica"
+              class="w-full h-full object-cover"
+              loading="lazy"
+            />
+          </div>
+
+          <div
+            class="gallery-item rounded-2xl overflow-hidden shadow-lg aspect-square sm:aspect-square aspect-[4/5]"
+          >
+            <img
+              src="src/img/WhatsApp%20Image%202026-02-09%20at%2021.16.18%20(4).jpeg"
+              alt="Projeto Nova Acústica"
+              class="w-full h-full object-cover"
+              loading="lazy"
+            />
+          </div>
+
+          <div
+            class="gallery-item rounded-2xl overflow-hidden shadow-lg aspect-square sm:aspect-square aspect-[4/5]"
+          >
+            <img
+              src="src/img/WhatsApp%20Image%202026-02-09%20at%2021.16.18.jpeg"
+              alt="Projeto Nova Acústica"
+              class="w-full h-full object-cover"
+              loading="lazy"
+            />
+          </div>
+
+          <div
+            class="gallery-item rounded-2xl overflow-hidden shadow-lg aspect-square sm:aspect-square aspect-[4/5]"
+          >
+            <img
+              src="src/img/WhatsApp%20Image%202026-02-09%20at%2021.16.19%20(1).jpeg"
+              alt="Projeto Nova Acústica"
+              class="w-full h-full object-cover"
+              loading="lazy"
+            />
+          </div>
+
+          <div
+            class="gallery-item rounded-2xl overflow-hidden shadow-lg aspect-square sm:aspect-square aspect-[4/5]"
+          >
+            <img
+              src="src/img/WhatsApp%20Image%202026-02-09%20at%2021.16.19%20(2).jpeg"
+              alt="Projeto Nova Acústica"
+              class="w-full h-full object-cover"
+              loading="lazy"
+            />
+          </div>
+
+          <div
+            class="gallery-item rounded-2xl overflow-hidden shadow-lg aspect-square sm:aspect-square aspect-[4/5]"
+          >
+            <img
+              src="src/img/WhatsApp%20Image%202026-02-09%20at%2021.16.19%20(3).jpeg"
+              alt="Projeto Nova Acústica"
+              class="w-full h-full object-cover"
+              loading="lazy"
+            />
+          </div>
+
+          <div
+            class="gallery-item rounded-2xl overflow-hidden shadow-lg aspect-square sm:aspect-square aspect-[4/5]"
+          >
+            <img
+              src="src/img/WhatsApp%20Image%202026-02-09%20at%2021.16.19.jpeg"
+              alt="Projeto Nova Acústica"
+              class="w-full h-full object-cover"
+              loading="lazy"
+            />
+          </div>
+
+          <div
+            class="gallery-item rounded-2xl overflow-hidden shadow-lg aspect-square sm:aspect-square aspect-[4/5]"
+          >
+            <img
+              src="src/img/WhatsApp%20Image%202026-02-09%20at%2021.16.20%20(1).jpeg"
+              alt="Projeto Nova Acústica"
+              class="w-full h-full object-cover"
+              loading="lazy"
+            />
+          </div>
+
+          <div
+            class="gallery-item rounded-2xl overflow-hidden shadow-lg aspect-square sm:aspect-square aspect-[4/5]"
+          >
+            <img
+              src="src/img/WhatsApp%20Image%202026-02-09%20at%2021.16.20%20(2).jpeg"
+              alt="Projeto Nova Acústica"
+              class="w-full h-full object-cover"
+              loading="lazy"
+            />
+          </div>
+
+          <div
+            class="gallery-item rounded-2xl overflow-hidden shadow-lg aspect-square sm:aspect-square aspect-[4/5]"
+          >
+            <img
+              src="src/img/WhatsApp%20Image%202026-02-09%20at%2021.16.20%20(3).jpeg"
+              alt="Projeto Nova Acústica"
+              class="w-full h-full object-cover"
+              loading="lazy"
+            />
+          </div>
+
+          <div
+            class="gallery-item rounded-2xl overflow-hidden shadow-lg aspect-square sm:aspect-square aspect-[4/5]"
+          >
+            <img
+              src="src/img/WhatsApp%20Image%202026-02-09%20at%2021.16.20%20(4).jpeg"
+              alt="Projeto Nova Acústica"
+              class="w-full h-full object-cover"
+              loading="lazy"
+            />
+          </div>
+
+          <div
+            class="gallery-item rounded-2xl overflow-hidden shadow-lg aspect-square sm:aspect-square aspect-[4/5]"
+          >
+            <img
+              src="src/img/WhatsApp%20Image%202026-02-09%20at%2021.16.20.jpeg"
+              alt="Projeto Nova Acústica"
+              class="w-full h-full object-cover"
+              loading="lazy"
+            />
           </div>
         </div>
-        
-        <!-- SoluÃ§Ãµes AcÃºsticas -->
-        <div class="bg-white rounded-2xl p-8 card-hover border-2 border-accent-green">
-          <div class="w-16 h-16 bg-gray-100 rounded-xl flex items-center justify-center mb-6">
-            <svg class="w-8 h-8 accent-green" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path d="M15.536 8.464a5 5 0 010 7.072M18.364 5.636a9 9 0 010 12.728"/>
-              <path d="M8.464 15.536a5 5 0 010-7.072M5.636 18.364a9 9 0 010-12.728"/>
-              <circle cx="12" cy="12" r="2"/>
+
+        <div class="text-center mt-12">
+          <p class="text-gray-500 mb-4">Quer ver seu projeto aqui?</p>
+          <a
+            href="#contato"
+            class="inline-flex items-center gap-2 bg-accent-green text-white px-8 py-4 rounded-full font-semibold hover:shadow-lg hover:shadow-green-500/30 transition-all"
+          >
+            <span>Solicite um Orçamento</span>
+            <svg
+              class="w-5 h-5"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M17 8l4 4m0 0l-4 4m4-4H3"
+              />
             </svg>
-          </div>
-          <h3 class="font-heading text-2xl font-bold text-gray-900 mb-4">Soluções Acústicas</h3>
-          <p class="text-gray-700 mb-6">
-            Janelas e portas com tratamento acústico especial para 
-            ambientes que exigem máximo conforto e silêncio.
+          </a>
+        </div>
+      </div>
+    </section>
+    <!-- Contato Section -->
+    <section id="contato" class="py-24 bg-gray-50 relative overflow-hidden">
+      <div class="absolute inset-0">
+        <div
+          class="absolute top-0 right-0 w-96 h-96 bg-gray-200/20 rounded-full blur-3xl"
+        ></div>
+        <div
+          class="absolute bottom-0 left-0 w-96 h-96 bg-gray-300/20 rounded-full blur-3xl"
+        ></div>
+      </div>
+      <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <span
+            class="accent-green font-semibold uppercase tracking-wider text-sm"
+            >Fale Conosco</span
+          >
+          <h2
+            class="font-heading text-4xl lg:text-5xl font-bold text-gray-900 mt-4 mb-6"
+          >
+            Entre em <span class="accent-green">Contato</span>
+          </h2>
+          <div class="w-20 h-1 bg-accent-green rounded-full mx-auto mb-6"></div>
+          <p class="text-gray-700 text-lg">
+            Solicite um orçamento sem compromisso. Nossa equipe está pronta para
+            atendê-lo.
           </p>
-          <div class="space-y-4">
-            <div class="flex items-start gap-3">
-              <div class="w-6 h-6 bg-gray-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                <svg class="w-4 h-4 accent-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+        </div>
+        <div class="grid lg:grid-cols-2 gap-8 lg:gap-12">
+          <!-- Contact Form -->
+          <div
+            class="bg-white rounded-2xl p-8 border border-gray-200 shadow-lg"
+          >
+            <h3 class="font-heading text-2xl font-bold text-gray-900 mb-6">
+              Solicite um Orçamento
+            </h3>
+            <form id="contact-form" class="space-y-6">
+              <div>
+                <label
+                  for="name"
+                  class="block text-gray-700 mb-2 text-sm font-medium"
+                  >Nome Completo</label
+                >
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  required
+                  class="w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-xl text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-accent-green focus:border-transparent transition-all"
+                  placeholder="Seu nome"
+                />
+              </div>
+              <div>
+                <label
+                  for="email"
+                  class="block text-gray-700 mb-2 text-sm font-medium"
+                  >E-mail</label
+                >
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  required
+                  class="w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-xl text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-accent-green focus:border-transparent transition-all"
+                  placeholder="seu@email.com"
+                />
+              </div>
+              <div>
+                <label
+                  for="phone"
+                  class="block text-gray-700 mb-2 text-sm font-medium"
+                  >Telefone/WhatsApp</label
+                >
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  required
+                  class="w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-xl text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-accent-green focus:border-transparent transition-all"
+                  placeholder="(11) 99999-9999"
+                />
+              </div>
+              <div>
+                <label
+                  for="service"
+                  class="block text-gray-700 mb-2 text-sm font-medium"
+                  >Tipo de Serviço</label
+                >
+                <select
+                  id="service"
+                  name="service"
+                  required
+                  class="w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-xl text-gray-800 focus:outline-none focus:ring-2 focus:ring-accent-green focus:border-transparent transition-all"
+                >
+                  <option value="">Selecione uma opção</option>
+                  <option value="janelas">Janelas de Alumínio</option>
+                  <option value="portas">Portas de Alumínio</option>
+                  <option value="acustica">Soluções Acústicas</option>
+                  <option value="outro">Outro</option>
+                </select>
+              </div>
+              <div>
+                <label
+                  for="message"
+                  class="block text-gray-700 mb-2 text-sm font-medium"
+                  >Mensagem</label
+                >
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="4"
+                  required
+                  class="w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-xl text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-accent-green focus:border-transparent transition-all resize-none"
+                  placeholder="Descreva seu projeto ou dúvida..."
+                ></textarea>
+              </div>
+              <button
+                type="submit"
+                class="w-full bg-accent-green text-white py-4 rounded-xl font-semibold hover:shadow-lg hover:shadow-green-500/30 transition-all flex items-center justify-center gap-2"
+              >
+                <span>Enviar Mensagem</span>
+                <svg
+                  class="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M14 5l7 7m0 0l-7 7m7-7H3"
+                  />
+                </svg>
+              </button>
+            </form>
+            <!-- Success Message -->
+            <div
+              id="success-message"
+              class="hidden mt-6 p-4 bg-green-100 border border-green-300 rounded-xl"
+            >
+              <div class="flex items-center gap-3">
+                <svg
+                  class="w-6 h-6 accent-green"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 13l4 4L19 7"
+                  /></svg
+                ><span class="text-green-700 font-medium"
+                  >Mensagem enviada com sucesso! Entraremos em contato em
+                  breve.</span
+                >
+              </div>
+            </div>
+          </div>
+          <!-- Contact Info -->
+          <div class="space-y-8">
+            <div
+              class="bg-white rounded-2xl p-8 border border-gray-200 shadow-lg"
+            >
+              <h3 class="font-heading text-2xl font-bold text-gray-900 mb-6">
+                Informações de Contato
+              </h3>
+              <div class="space-y-6">
+                <div class="flex items-start gap-4">
+                  <div
+                    class="w-12 h-12 bg-gray-100 rounded-xl flex items-center justify-center flex-shrink-0"
+                  >
+                    <svg
+                      class="w-6 h-6 accent-green"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                      />
+                    </svg>
+                  </div>
+                  <div>
+                    <div class="text-gray-600 text-sm mb-1">
+                      Telefone / WhatsApp
+                    </div>
+                    <div
+                      id="contact-phone"
+                      class="text-gray-900 text-base sm:text-lg font-medium break-words"
+                    >
+                      (11) 99999-9999
+                    </div>
+                  </div>
+                </div>
+                <div class="flex items-start gap-4">
+                  <div
+                    class="w-12 h-12 bg-gray-100 rounded-xl flex items-center justify-center flex-shrink-0"
+                  >
+                    <svg
+                      class="w-6 h-6 accent-green"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                      />
+                    </svg>
+                  </div>
+                  <div>
+                    <div class="text-gray-600 text-sm mb-1">E-mail</div>
+                    <div
+                      id="contact-email"
+                      class="text-gray-900 text-base sm:text-lg font-medium break-all"
+                    >
+                      contato@novaacustica.com.br
+                    </div>
+                  </div>
+                </div>
+                <div class="flex items-start gap-4">
+                  <div
+                    class="w-12 h-12 bg-gray-100 rounded-xl flex items-center justify-center flex-shrink-0"
+                  >
+                    <svg
+                      class="w-6 h-6 accent-green"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                      />
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                      />
+                    </svg>
+                  </div>
+                  <div>
+                    <div class="text-gray-600 text-sm mb-1">Localização</div>
+                    <div
+                      id="contact-address"
+                      class="text-gray-900 text-base sm:text-lg font-medium break-words"
+                    >
+                      São Paulo - SP
+                    </div>
+                  </div>
+                </div>
+                <div class="flex items-start gap-4">
+                  <div
+                    class="w-12 h-12 bg-gray-100 rounded-xl flex items-center justify-center flex-shrink-0"
+                  >
+                    <svg
+                      class="w-6 h-6 accent-green"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                      />
+                    </svg>
+                  </div>
+                  <div>
+                    <div class="text-gray-600 text-sm mb-1">
+                      Horário de Atendimento
+                    </div>
+                    <div class="text-gray-900 text-lg font-medium">
+                      Segunda a Sexta: 8h às 18h
+                    </div>
+                    <div class="text-gray-700">Sábado: 8h às 12h</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- WhatsApp CTA -->
+            <a
+              href="#"
+              id="whatsapp-link"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="block bg-accent-green hover:bg-emerald-700 rounded-2xl p-6 transition-all hover:shadow-lg hover:shadow-green-500/30"
+            >
+              <div class="flex items-center gap-4">
+                <div
+                  class="w-14 h-14 bg-white/20 rounded-xl flex items-center justify-center"
+                >
+                  <svg
+                    class="w-8 h-8 text-white"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                  >
+                    <path
+                      d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"
+                    />
+                  </svg>
+                </div>
+                <div>
+                  <div class="text-white font-bold text-xl">
+                    Fale pelo WhatsApp
+                  </div>
+                  <div class="text-white/80">
+                    Resposta rápida e sem compromisso
+                  </div>
+                </div>
+                <svg
+                  class="w-6 h-6 text-white ml-auto"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M17 8l4 4m0 0l-4 4m4-4H3"
+                  />
+                </svg></div
+            ></a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Footer -->
+    <footer class="bg-gray-900 py-12">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid md:grid-cols-4 gap-8 mb-12">
+          <div class="md:col-span-2">
+            <div class="flex items-center gap-3 mb-4">
+              <div
+                class="w-10 h-10 bg-accent-green rounded-lg flex items-center justify-center"
+              >
+                <svg
+                  class="w-6 h-6 text-white"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                >
+                  <rect x="3" y="3" width="18" height="18" rx="2" />
+                  <line x1="3" y1="9" x2="21" y2="9" />
+                  <line x1="9" y1="9" x2="9" y2="21" />
+                  <line x1="15" y1="9" x2="15" y2="21" />
                 </svg>
               </div>
-              <span class="text-gray-700">Redução significativa de ruídos externos (até 45dB)</span>
+              <span
+                id="footer-company-name"
+                class="font-heading text-xl font-bold text-white"
+                >Nova Acústica</span
+              >
             </div>
-            <div class="flex items-start gap-3">
-              <div class="w-6 h-6 bg-gray-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                <svg class="w-4 h-4 accent-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-                </svg>
-              </div>
-              <span class="text-gray-700">Ideal para residências, escritórios e estúdios</span>
-            </div>
-            <div class="flex items-start gap-3">
-              <div class="w-6 h-6 bg-gray-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                <svg class="w-4 h-4 accent-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-                </svg>
-              </div>
-              <span class="text-gray-700">Melhora na qualidade de vida e bem-estar</span>
-            </div>
+            <p class="text-gray-400 max-w-md">
+              Especialistas em esquadrias de alumínio sob medida e soluções
+              acústicas. Qualidade, conforto e segurança para seu ambiente.
+            </p>
+          </div>
+          <div>
+            <h4 class="text-white font-semibold mb-4">Links Rápidos</h4>
+            <ul class="space-y-2">
+              <li>
+                <a
+                  href="#home"
+                  class="text-gray-400 hover:accent-green transition-colors"
+                  >Início</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#sobre"
+                  class="text-gray-400 hover:accent-green transition-colors"
+                  >Quem Somos</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#produtos"
+                  class="text-gray-400 hover:accent-green transition-colors"
+                  >Produtos</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#contato"
+                  class="text-gray-400 hover:accent-green transition-colors"
+                  >Contato</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="text-white font-semibold mb-4">Produtos</h4>
+            <ul class="space-y-2">
+              <li>
+                <a
+                  href="#produtos"
+                  class="text-gray-400 hover:accent-green transition-colors"
+                  >Janelas</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#produtos"
+                  class="text-gray-400 hover:accent-green transition-colors"
+                  >Portas</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#produtos"
+                  class="text-gray-400 hover:accent-green transition-colors"
+                  >Soluções Acústicas</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#vidros"
+                  class="text-gray-400 hover:accent-green transition-colors"
+                  >Tipos de Vidros</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div
+          class="h-px bg-gradient-to-r from-transparent via-gray-700 to-transparent mb-8"
+        ></div>
+        <div
+          class="flex flex-col md:flex-row justify-between items-center gap-4"
+        >
+          <p class="text-gray-500 text-sm">
+            © 2024 Nova Acústica. Todos os direitos reservados.
+          </p>
+          <div class="flex items-center gap-4">
+            <span class="text-gray-500 text-sm">Desenvolvido Por</span>
+            <span class="accent-green">We Lúmen</span>
           </div>
         </div>
       </div>
-      
-      <!-- Product Types Grid -->
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-        <div class="bg-white rounded-xl p-6 text-center card-hover border border-gray-200">
-          <div class="w-20 h-20 mx-auto mb-4 bg-gray-50 rounded-xl flex items-center justify-center">
-            <svg class="w-10 h-10 accent-green" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <rect x="4" y="4" width="16" height="16" rx="1"/>
-              <line x1="12" y1="4" x2="12" y2="20"/>
-              <path d="M4 12h3"/>
-              <path d="M17 12h3"/>
-            </svg>
-          </div>
-          <h4 class="font-semibold text-gray-800 mb-1">Portas de Correr</h4>
-          <p class="text-sm text-gray-500">Praticidade e elegância</p>
-        </div>
-        
-        <div class="bg-white rounded-xl p-6 text-center card-hover border border-gray-200">
-          <div class="w-20 h-20 mx-auto mb-4 bg-gray-50 rounded-xl flex items-center justify-center">
-            <svg class="w-10 h-10 accent-green" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <rect x="4" y="4" width="16" height="16" rx="1"/>
-              <path d="M20 4L20 20" stroke-width="2"/>
-              <circle cx="18" cy="12" r="1" fill="currentColor"/>
-            </svg>
-          </div>
-          <h4 class="font-semibold text-gray-800 mb-1">Portas de Abrir</h4>
-          <p class="text-sm text-gray-500">Lateral ou total</p>
-        </div>
-        
-        <div class="bg-white rounded-xl p-6 text-center card-hover border border-gray-200">
-          <div class="w-20 h-20 mx-auto mb-4 bg-gray-50 rounded-xl flex items-center justify-center">
-            <svg class="w-10 h-10 accent-green" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <rect x="3" y="6" width="18" height="12" rx="1"/>
-              <line x1="3" y1="12" x2="21" y2="12"/>
-              <line x1="12" y1="6" x2="12" y2="18"/>
-            </svg>
-          </div>
-          <h4 class="font-semibold text-gray-800 mb-1">Janelas de Correr</h4>
-          <p class="text-sm text-gray-500">2, 3 ou 4 folhas</p>
-        </div>
-        
-        <div class="bg-white rounded-xl p-6 text-center card-hover border border-gray-200">
-          <div class="w-20 h-20 mx-auto mb-4 bg-gray-50 rounded-xl flex items-center justify-center">
-            <svg class="w-10 h-10 accent-green" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <rect x="4" y="8" width="16" height="10" rx="1"/>
-              <path d="M4 8L12 4L20 8"/>
-            </svg>
-          </div>
-          <h4 class="font-semibold text-gray-800 mb-1">Max-ar</h4>
-          <p class="text-sm text-gray-500">Banheiros e cozinhas</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Tipos de Vidros Section -->
-  <section id="vidros" class="py-24 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center max-w-3xl mx-auto mb-16">
-        <span class="accent-green font-semibold uppercase tracking-wider text-sm">Tecnologia em Vidros</span>
-        <h2 class="font-heading text-4xl lg:text-5xl font-bold text-gray-900 mt-4 mb-6">
-          Tipos de <span class="accent-green">Vidros</span>
-        </h2>
-        <div class="w-20 h-1 bg-accent-green rounded-full mx-auto mb-6"></div>
-        <p class="text-gray-600 text-lg">
-          Conheça as opções de vidros disponíveis e suas características 
-          para escolher a melhor soluçã o para seu projeto.
-        </p>
-      </div>
-      
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <!-- Vidro Comum -->
-        <div class="bg-gray-50 rounded-2xl p-6 shadow-sm card-hover">
-          <div class="flex items-center gap-4 mb-4">
-            <div class="w-12 h-12 bg-gray-200 rounded-xl flex items-center justify-center">
-              <svg class="w-6 h-6 text-gray-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <rect x="4" y="4" width="16" height="16" rx="2"/>
-              </svg>
-            </div>
-            <h3 class="font-semibold text-xl text-gray-800">Vidro Comum</h3>
-          </div>
-          <p class="text-gray-600 mb-4">Opção básica para ambientes internos sem necessidades especiais de isolamento.</p>
-          <div class="flex flex-wrap gap-2">
-            <span class="px-3 py-1 bg-gray-200 text-gray-700 rounded-full text-sm">Econômico</span>
-            <span class="px-3 py-1 bg-gray-200 text-gray-700 rounded-full text-sm">Básico</span>
-          </div>
-        </div>
-        
-        <!-- Vidro Laminado -->
-        <div class="bg-gray-50 rounded-2xl p-6 shadow-sm card-hover">
-          <div class="flex items-center gap-4 mb-4">
-            <div class="w-12 h-12 bg-gray-100 rounded-xl flex items-center justify-center">
-              <svg class="w-6 h-6 accent-green" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <rect x="4" y="4" width="16" height="16" rx="2"/>
-                <line x1="4" y1="10" x2="20" y2="10" stroke-dasharray="2 2"/>
-              </svg>
-            </div>
-            <h3 class="font-semibold text-xl text-gray-800">Vidro Laminado</h3>
-          </div>
-          <p class="text-gray-600 mb-4">Duas ou mais lâminas de vidro com película interna. Maior segurança e proteção UV.</p>
-          <div class="flex flex-wrap gap-2">
-            <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm">Segurança</span>
-            <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm">Proteção UV</span>
-          </div>
-        </div>
-        
-        <!-- Vidro Duplo -->
-        <div class="bg-gray-50 rounded-2xl p-6 shadow-sm card-hover">
-          <div class="flex items-center gap-4 mb-4">
-            <div class="w-12 h-12 bg-gray-100 rounded-xl flex items-center justify-center">
-              <svg class="w-6 h-6 accent-green" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <rect x="3" y="4" width="8" height="16" rx="1"/>
-                <rect x="13" y="4" width="8" height="16" rx="1"/>
-              </svg>
-            </div>
-            <h3 class="font-semibold text-xl text-gray-800">Vidro Duplo</h3>
-          </div>
-          <p class="text-gray-600 mb-4">Duas lâminas com câmara de ar. Excelente isolamento térmico e acústico inicial.</p>
-          <div class="flex flex-wrap gap-2">
-            <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm">Térmico</span>
-            <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm">Acústico</span>
-          </div>
-        </div>
-        
-        <!-- Vidro Triplo -->
-        <div class="bg-white rounded-2xl p-6 shadow-lg card-hover border-2 border-accent-green">
-          <div class="flex items-center gap-4 mb-4">
-            <div class="w-12 h-12 bg-accent-green rounded-xl flex items-center justify-center">
-              <svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <rect x="2" y="4" width="6" height="16" rx="1"/>
-                <rect x="9" y="4" width="6" height="16" rx="1"/>
-                <rect x="16" y="4" width="6" height="16" rx="1"/>
-              </svg>
-            </div>
-            <div>
-              <h3 class="font-semibold text-xl text-gray-800">Vidro Triplo</h3>
-              <span class="text-xs accent-green font-medium">RECOMENDADO</span>
-            </div>
-          </div>
-          <p class="text-gray-600 mb-4">Três lâminas com duas câmaras. Alta performance em isolamento térmico e acústico.</p>
-          <div class="flex flex-wrap gap-2">
-            <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm">Alta Performance</span>
-            <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm">Premium</span>
-          </div>
-        </div>
-        
-        <!-- Vidro QuÃ¡druplo -->
-        <div class="bg-gray-50 rounded-2xl p-6 shadow-sm card-hover">
-          <div class="flex items-center gap-4 mb-4">
-            <div class="w-12 h-12 bg-gray-200 rounded-xl flex items-center justify-center">
-              <svg class="w-6 h-6 text-gray-700" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <rect x="2" y="4" width="4" height="16" rx="1"/>
-                <rect x="7" y="4" width="4" height="16" rx="1"/>
-                <rect x="12" y="4" width="4" height="16" rx="1"/>
-                <rect x="17" y="4" width="4" height="16" rx="1"/>
-              </svg>
-            </div>
-            <h3 class="font-semibold text-xl text-gray-800">Vidro Quádruplo</h3>
-          </div>
-          <p class="text-gray-600 mb-4">Máximo isolamento para ambientes que exigem silêncio absoluto e controle térmico total.</p>
-          <div class="flex flex-wrap gap-2">
-            <span class="px-3 py-1 bg-gray-200 text-gray-700 rounded-full text-sm">Máximo Isolamento</span>
-            <span class="px-3 py-1 bg-gray-200 text-gray-700 rounded-full text-sm">Exclusivo</span>
-          </div>
-        </div>
-        
-        <!-- Vidro Multilaminado -->
-        <div class="bg-gray-50 rounded-2xl p-6 shadow-sm card-hover">
-          <div class="flex items-center gap-4 mb-4">
-            <div class="w-12 h-12 bg-gray-200 rounded-xl flex items-center justify-center">
-              <svg class="w-6 h-6 text-gray-700" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <rect x="4" y="4" width="16" height="16" rx="2"/>
-                <path d="M4 8h16M4 12h16M4 16h16"/>
-              </svg>
-            </div>
-            <h3 class="font-semibold text-xl text-gray-800">Multilaminado</h3>
-          </div>
-          <p class="text-gray-600 mb-4">Vidro anti-vandalismo com múltiplas camadas. Máxima segurança e resistência a impactos.</p>
-          <div class="flex flex-wrap gap-2">
-            <span class="px-3 py-1 bg-gray-200 text-gray-700 rounded-full text-sm">Anti-vandalismo</span>
-            <span class="px-3 py-1 bg-gray-200 text-gray-700 rounded-full text-sm">Blindagem</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Diferenciais Section -->
-  <section id="diferenciais" class="py-24 bg-gray-50">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center max-w-3xl mx-auto mb-16">
-        <span class="accent-green font-semibold uppercase tracking-wider text-sm">Por que nos escolher</span>
-        <h2 class="font-heading text-4xl lg:text-5xl font-bold text-gray-900 mt-4 mb-6">
-          Nossos <span class="accent-green">Diferenciais</span>
-        </h2>
-        <div class="w-20 h-1 bg-accent-green rounded-full mx-auto"></div>
-      </div>
-      
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <div class="text-center p-8">
-          <div class="w-20 h-20 bg-accent-green rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg shadow-green-500/20">
-            <svg class="w-10 h-10 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
-            </svg>
-          </div>
-          <h3 class="font-heading text-xl font-bold text-gray-800 mb-3">Produção Sob Medida</h3>
-          <p class="text-gray-600">Cada projeto é único. Fabricamos de acordo com as especificações exatas do seu ambiente.</p>
-        </div>
-        
-        <div class="text-center p-8">
-          <div class="w-20 h-20 bg-accent-green rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg shadow-green-500/20">
-            <svg class="w-10 h-10 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
-            </svg>
-          </div>
-          <h3 class="font-heading text-xl font-bold text-gray-800 mb-3">Materiais Premium</h3>
-          <p class="text-gray-600">Alumínio de alta qualidade, vidros especiais e acessórios de primeira linha.</p>
-        </div>
-        
-        <div class="text-center p-8">
-          <div class="w-20 h-20 bg-accent-green rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg shadow-green-500/20">
-            <svg class="w-10 h-10 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"/>
-            </svg>
-          </div>
-          <h3 class="font-heading text-xl font-bold text-gray-800 mb-3">Design Moderno</h3>
-          <p class="text-gray-600">Padrões nacionais e europeus com acabamento sofisticado e elegante.</p>
-        </div>
-        
-        <div class="text-center p-8">
-          <div class="w-20 h-20 bg-accent-green rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg shadow-green-500/20">
-            <svg class="w-10 h-10 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M9 12h.01"/>
-            </svg>
-          </div>
-          <h3 class="font-heading text-xl font-bold text-gray-800 mb-3">Tratamento Acústico</h3>
-          <p class="text-gray-600">Tecnologia avançada para redução de ruídos e máximo conforto acústico.</p>
-        </div>
-        
-        <div class="text-center p-8">
-          <div class="w-20 h-20 bg-accent-green rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg shadow-green-500/20">
-            <svg class="w-10 h-10 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/>
-            </svg>
-          </div>
-          <h3 class="font-heading text-xl font-bold text-gray-800 mb-3">Instalação Especializada</h3>
-          <p class="text-gray-600">Equipe técnica treinada para instalação perfeita e acabamento impecável.</p>
-        </div>
-        
-        <div class="text-center p-8">
-          <div class="w-20 h-20 bg-accent-green rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg shadow-green-500/20">
-            <svg class="w-10 h-10 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path d="M11 3.055A9.001 9.001 0 1120.945 13H11V3.055z"/>
-              <path d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z"/>
-            </svg>
-          </div>
-          <h3 class="font-heading text-xl font-bold text-gray-800 mb-3">Soluções Personalizadas</h3>
-          <p class="text-gray-600">Projetos adaptados às necessidades específicas de cada cliente.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Galeria Section -->
-  <section id="galeria" class="py-24 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center max-w-3xl mx-auto mb-16">
-        <span class="accent-green font-semibold uppercase tracking-wider text-sm">Nosso Portfólio</span>
-        <h2 class="font-heading text-4xl lg:text-5xl font-bold text-gray-900 mt-4 mb-6">
-          Galeria de <span class="accent-green">Projetos</span>
-        </h2>
-        <div class="w-20 h-1 bg-accent-green rounded-full mx-auto mb-6"></div>
-        <p class="text-gray-600 text-lg">
-          Confira alguns dos nossos projetos realizados em residências e empresas.
-        </p>
-      </div>
-      <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
-        <div class="gallery-item rounded-2xl overflow-hidden shadow-lg aspect-square">
-          <img src="src/img/WhatsApp%20Image%202026-02-09%20at%2021.16.17%20(1).jpeg" alt="Projeto Nova Acustica" class="w-full h-full object-cover" loading="lazy">
-        </div>
-
-        <div class="gallery-item rounded-2xl overflow-hidden shadow-lg aspect-square">
-          <img src="src/img/WhatsApp%20Image%202026-02-09%20at%2021.16.17%20(2).jpeg" alt="Projeto Nova Acustica" class="w-full h-full object-cover" loading="lazy">
-        </div>
-
-        <div class="gallery-item rounded-2xl overflow-hidden shadow-lg aspect-square">
-          <img src="src/img/WhatsApp%20Image%202026-02-09%20at%2021.16.17%20(3).jpeg" alt="Projeto Nova Acustica" class="w-full h-full object-cover" loading="lazy">
-        </div>
-
-        <div class="gallery-item rounded-2xl overflow-hidden shadow-lg aspect-square">
-          <img src="src/img/WhatsApp%20Image%202026-02-09%20at%2021.16.17%20(4).jpeg" alt="Projeto Nova Acustica" class="w-full h-full object-cover" loading="lazy">
-        </div>
-
-        <div class="gallery-item rounded-2xl overflow-hidden shadow-lg aspect-square">
-          <img src="src/img/WhatsApp%20Image%202026-02-09%20at%2021.16.17%20(5).jpeg" alt="Projeto Nova Acustica" class="w-full h-full object-cover" loading="lazy">
-        </div>
-
-        <div class="gallery-item rounded-2xl overflow-hidden shadow-lg aspect-square">
-          <img src="src/img/WhatsApp%20Image%202026-02-09%20at%2021.16.17.jpeg" alt="Projeto Nova Acustica" class="w-full h-full object-cover" loading="lazy">
-        </div>
-
-        <div class="gallery-item rounded-2xl overflow-hidden shadow-lg aspect-square">
-          <img src="src/img/WhatsApp%20Image%202026-02-09%20at%2021.16.18%20(1).jpeg" alt="Projeto Nova Acustica" class="w-full h-full object-cover" loading="lazy">
-        </div>
-
-        <div class="gallery-item rounded-2xl overflow-hidden shadow-lg aspect-square">
-          <img src="src/img/WhatsApp%20Image%202026-02-09%20at%2021.16.18%20(2).jpeg" alt="Projeto Nova Acustica" class="w-full h-full object-cover" loading="lazy">
-        </div>
-
-        <div class="gallery-item rounded-2xl overflow-hidden shadow-lg aspect-square">
-          <img src="src/img/WhatsApp%20Image%202026-02-09%20at%2021.16.18%20(3).jpeg" alt="Projeto Nova Acustica" class="w-full h-full object-cover" loading="lazy">
-        </div>
-
-        <div class="gallery-item rounded-2xl overflow-hidden shadow-lg aspect-square">
-          <img src="src/img/WhatsApp%20Image%202026-02-09%20at%2021.16.18%20(4).jpeg" alt="Projeto Nova Acustica" class="w-full h-full object-cover" loading="lazy">
-        </div>
-
-        <div class="gallery-item rounded-2xl overflow-hidden shadow-lg aspect-square">
-          <img src="src/img/WhatsApp%20Image%202026-02-09%20at%2021.16.18.jpeg" alt="Projeto Nova Acustica" class="w-full h-full object-cover" loading="lazy">
-        </div>
-
-        <div class="gallery-item rounded-2xl overflow-hidden shadow-lg aspect-square">
-          <img src="src/img/WhatsApp%20Image%202026-02-09%20at%2021.16.19%20(1).jpeg" alt="Projeto Nova Acustica" class="w-full h-full object-cover" loading="lazy">
-        </div>
-
-        <div class="gallery-item rounded-2xl overflow-hidden shadow-lg aspect-square">
-          <img src="src/img/WhatsApp%20Image%202026-02-09%20at%2021.16.19%20(2).jpeg" alt="Projeto Nova Acustica" class="w-full h-full object-cover" loading="lazy">
-        </div>
-
-        <div class="gallery-item rounded-2xl overflow-hidden shadow-lg aspect-square">
-          <img src="src/img/WhatsApp%20Image%202026-02-09%20at%2021.16.19%20(3).jpeg" alt="Projeto Nova Acustica" class="w-full h-full object-cover" loading="lazy">
-        </div>
-
-        <div class="gallery-item rounded-2xl overflow-hidden shadow-lg aspect-square">
-          <img src="src/img/WhatsApp%20Image%202026-02-09%20at%2021.16.19.jpeg" alt="Projeto Nova Acustica" class="w-full h-full object-cover" loading="lazy">
-        </div>
-
-        <div class="gallery-item rounded-2xl overflow-hidden shadow-lg aspect-square">
-          <img src="src/img/WhatsApp%20Image%202026-02-09%20at%2021.16.20%20(1).jpeg" alt="Projeto Nova Acustica" class="w-full h-full object-cover" loading="lazy">
-        </div>
-
-        <div class="gallery-item rounded-2xl overflow-hidden shadow-lg aspect-square">
-          <img src="src/img/WhatsApp%20Image%202026-02-09%20at%2021.16.20%20(2).jpeg" alt="Projeto Nova Acustica" class="w-full h-full object-cover" loading="lazy">
-        </div>
-
-        <div class="gallery-item rounded-2xl overflow-hidden shadow-lg aspect-square">
-          <img src="src/img/WhatsApp%20Image%202026-02-09%20at%2021.16.20%20(3).jpeg" alt="Projeto Nova Acustica" class="w-full h-full object-cover" loading="lazy">
-        </div>
-
-        <div class="gallery-item rounded-2xl overflow-hidden shadow-lg aspect-square">
-          <img src="src/img/WhatsApp%20Image%202026-02-09%20at%2021.16.20%20(4).jpeg" alt="Projeto Nova Acustica" class="w-full h-full object-cover" loading="lazy">
-        </div>
-
-        <div class="gallery-item rounded-2xl overflow-hidden shadow-lg aspect-square">
-          <img src="src/img/WhatsApp%20Image%202026-02-09%20at%2021.16.20.jpeg" alt="Projeto Nova Acustica" class="w-full h-full object-cover" loading="lazy">
-        </div>
-      </div>
-
-      <div class="text-center mt-12">
-        <p class="text-gray-500 mb-4">Quer ver seu projeto aqui?</p>
-        <a href="#contato" class="inline-flex items-center gap-2 bg-accent-green text-white px-8 py-4 rounded-full font-semibold hover:shadow-lg hover:shadow-green-500/30 transition-all">
-          <span>Solicite um Orçamento</span>
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-          </svg>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contato Section -->
-  <section id="contato" class="py-24 bg-gray-50 relative overflow-hidden">
-    <div class="absolute inset-0">
-      <div class="absolute top-0 right-0 w-96 h-96 bg-gray-200/20 rounded-full blur-3xl"></div>
-      <div class="absolute bottom-0 left-0 w-96 h-96 bg-gray-300/20 rounded-full blur-3xl"></div>
-    </div>
-    
-    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center max-w-3xl mx-auto mb-16">
-        <span class="accent-green font-semibold uppercase tracking-wider text-sm">Fale Conosco</span>
-        <h2 class="font-heading text-4xl lg:text-5xl font-bold text-gray-900 mt-4 mb-6">
-          Entre em <span class="accent-green">Contato</span>
-        </h2>
-        <div class="w-20 h-1 bg-accent-green rounded-full mx-auto mb-6"></div>
-        <p class="text-gray-700 text-lg">
-          Solicite um orçamento sem compromisso. Nossa equipe está pronta para atendê-lo.
-        </p>
-      </div>
-      
-      <div class="grid lg:grid-cols-2 gap-12">
-        <!-- Contact Form -->
-        <div class="bg-white rounded-2xl p-8 border border-gray-200 shadow-lg">
-          <h3 class="font-heading text-2xl font-bold text-gray-900 mb-6">Solicite um Orçamento</h3>
-          <form id="contact-form" class="space-y-6">
-            <div>
-              <label for="name" class="block text-gray-700 mb-2 text-sm font-medium">Nome Completo</label>
-              <input type="text" id="name" name="name" required
-                class="w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-xl text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-accent-green focus:border-transparent transition-all"
-                placeholder="Seu nome">
-            </div>
-            <div>
-              <label for="email" class="block text-gray-700 mb-2 text-sm font-medium">E-mail</label>
-              <input type="email" id="email" name="email" required
-                class="w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-xl text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-accent-green focus:border-transparent transition-all"
-                place
-
+    </footer>
+    <!-- Floating WhatsApp Button -->
+    <a
+      href="#"
+      id="floating-whatsapp"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="fixed bottom-6 right-6 z-50 w-16 h-16 bg-accent-green rounded-full flex items-center justify-center shadow-lg shadow-green-500/20 hover:bg-emerald-700 transition-all whatsapp-btn"
+    >
+      <svg class="w-8 h-8 text-white" viewBox="0 0 24 24" fill="currentColor">
+        <path
+          d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"
+        /></svg
+    ></a>
+    <script src="src/js/script.js"></script>
+  </body>
+</html>
