@@ -1,1 +1,239 @@
 
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Site Institucional | Janelas e Portas Sob Medida</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+      background: #f5f5f5;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #111;
+      color: #fff;
+      padding: 20px;
+    }
+
+    header nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    header a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    section {
+      padding: 60px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .hero {
+      text-align: center;
+      background: #eaeaea;
+      padding: 80px 20px;
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      margin-bottom: 30px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 25px;
+      background: #111;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+      margin: 5px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+      margin-top: 40px;
+    }
+
+    .card {
+      background: #fff;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    .card h3 {
+      margin-bottom: 15px;
+    }
+
+    footer {
+      background: #111;
+      color: #fff;
+      text-align: center;
+      padding: 30px 20px;
+      margin-top: 60px;
+    }
+
+    form {
+      max-width: 500px;
+      margin: auto;
+    }
+
+    form input, form textarea {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 15px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    form button {
+      width: 100%;
+      padding: 12px;
+      background: #111;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <nav>
+      <h2>LOGO</h2>
+      <ul>
+        <li><a href="#home">Início</a></li>
+        <li><a href="#sobre">Quem Somos</a></li>
+        <li><a href="#produtos">Produtos</a></li>
+        <li><a href="#vidros">Vidros</a></li>
+        <li><a href="#projetos">Projetos</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- HOME -->
+  <section id="home" class="hero">
+    <h1>Janelas e Portas Sob Medida</h1>
+    <p>Soluções em esquadrias de alumínio com conforto acústico, design moderno e alta qualidade.</p>
+    <a href="#contato" class="btn">Solicitar Orçamento</a>
+    <a href="#contato" class="btn">Falar no WhatsApp</a>
+  </section>
+
+  <!-- DIFERENCIAIS -->
+  <section>
+    <div class="grid">
+      <div class="card">
+        <h3>Sob Medida</h3>
+        <p>Projetos personalizados conforme a necessidade de cada cliente.</p>
+      </div>
+      <div class="card">
+        <h3>Soluções Acústicas</h3>
+        <p>Redução significativa de ruídos externos para mais conforto.</p>
+      </div>
+      <div class="card">
+        <h3>Design Moderno</h3>
+        <p>Acabamentos de alto padrão que valorizam seu imóvel.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOBRE -->
+  <section id="sobre">
+    <h2>Quem Somos</h2>
+    <p>
+      Somos uma empresa especializada na fabricação e instalação de janelas e portas de alumínio sob medida,
+      oferecendo soluções convencionais e termoacústicas para residências, comércios e escritórios.
+    </p>
+  </section>
+
+  <!-- PRODUTOS -->
+  <section id="produtos">
+    <h2>Produtos e Soluções</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Janelas</h3>
+        <p>Correr, abrir, max-ar e modelos personalizados.</p>
+      </div>
+      <div class="card">
+        <h3>Portas</h3>
+        <p>Portas de correr, abrir lateral ou total.</p>
+      </div>
+      <div class="card">
+        <h3>Soluções Acústicas</h3>
+        <p>Esquadrias projetadas para conforto térmico e acústico.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- VIDROS -->
+  <section id="vidros">
+    <h2>Tipos de Vidros</h2>
+    <div class="grid">
+      <div class="card">Vidro Comum</div>
+      <div class="card">Vidro Laminado</div>
+      <div class="card">Vidro Duplo</div>
+      <div class="card">Vidro Triplo</div>
+      <div class="card">Vidro Quadruplo</div>
+      <div class="card">Vidro Multilaminado</div>
+    </div>
+  </section>
+
+  <!-- PROJETOS -->
+  <section id="projetos">
+    <h2>Projetos Realizados</h2>
+    <p>Galeria de imagens dos serviços executados (imagens ilustrativas).</p>
+  </section>
+
+  <!-- CONTATO -->
+  <section id="contato">
+    <h2>Contato</h2>
+    <form>
+      <input type="text" placeholder="Nome">
+      <input type="email" placeholder="E-mail">
+      <input type="tel" placeholder="Telefone">
+      <textarea rows="4" placeholder="Mensagem"></textarea>
+      <button type="submit">Enviar Mensagem</button>
+    </form>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2026 • Site Institucional • Todos os direitos reservados</p>
+  </footer>
+
+</body>
+</html>
