@@ -10,7 +10,7 @@ body {
       background-color: #e9edf1;
     }
     :root {
-      --primary: #12a874;
+      --primary: #34be6b;
       --primary-dark: #0d8a5f;
       --black: #0f1720;
       --light-gray: #e5e7eb;
@@ -28,9 +28,26 @@ body {
       font-family: 'Playfair Display', serif;
     }
     
-    .font-body {
-      font-family: 'Montserrat', sans-serif;
-    }
+.font-body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.brand-logo {
+  display: block;
+  width: auto;
+  object-fit: contain;
+}
+
+.brand-logo-nav {
+  height: 120px;
+  max-width: 260px;
+}
+
+.brand-logo-footer {
+  height: 44px;
+  max-width: 240px;
+  filter: brightness(0) invert(1);
+}
     
     .gradient-hero {
       background:
@@ -144,10 +161,20 @@ body {
       }
     }
 
-    @media (max-width: 767px) {
-      .hero-photo {
-        background-position: 62% center;
-      }
+@media (max-width: 767px) {
+  .brand-logo-nav {
+    height: 52px;
+    max-width: 260px;
+  }
+
+  .brand-logo-footer {
+    height: 38px;
+    max-width: 200px;
+  }
+
+  .hero-photo {
+    background-position: 62% center;
+  }
 
       .hero-blueprint {
         opacity: 0.5;
