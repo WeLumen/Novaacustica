@@ -45,7 +45,7 @@ body {
 }
 
 .brand-logo-footer {
-  height: 110px;
+  height: 180px;
   max-width: 270px;
 }
     
@@ -277,12 +277,12 @@ body {
 
 @media (max-width: 767px) {
   .brand-logo-nav {
-    height: 68px;
+    height: 120px;
     max-width: 300px;
   }
 
   .brand-logo-footer {
-    height: 56px;
+    height: 120px;
     max-width: 260px;
   }
 
