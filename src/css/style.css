@@ -40,8 +40,8 @@ body {
 }
 
 .brand-logo-nav {
-  height: 120px;
-  max-width: 260px;
+  height: 140px;
+  max-width: 320px;
 }
 
 .brand-logo-footer {
@@ -277,8 +277,8 @@ body {
 
 @media (max-width: 767px) {
   .brand-logo-nav {
-    height: 52px;
-    max-width: 260px;
+    height: 68px;
+    max-width: 300px;
   }
 
   .brand-logo-footer {

@@ -3,7 +3,7 @@
       company_name: 'Nova Acústica',
       hero_title: 'Esquadrias de Alumínio Sob Medida',
       hero_subtitle: 'Transformamos ambientes com janelas e portas de alta performance. Conforto térmico, isolamento acústico e design sofisticado para sua casa ou empresa.',
-      phone_number: '(11) 99999-9999',
+      phone_number: '(11) 94621-9072',
       email_address: 'contato@novaacustica.com.br',
       address_text: 'São Paulo - SP'
     };
@@ -36,7 +36,7 @@
           const phoneClean = phone.replace(/\D/g, '');
           const phoneHref = `tel:+55${phoneClean}`;
           const emailHref = `mailto:${email}`;
-          const whatsappUrl = `https://wa.me/55${phoneClean}?text=Olá! Gostaria de solicitar um orçamento.`;
+          const whatsappUrl = "https://wa.me/5511946219072";
           const whatsappPrimaryLink = document.getElementById('whatsapp-link');
           if (whatsappPrimaryLink) {
             whatsappPrimaryLink.href = whatsappUrl;
@@ -303,3 +303,4 @@
     }
 
 (function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9cc66aa7d62ce1ea',t:'MTc3MDgzOTg2MC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();
+
